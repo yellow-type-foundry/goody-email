@@ -28,3 +28,6 @@
 - Fonts: `/assets/...` (absolute paths)
 - Images: `/images/...` (absolute paths)
 
+
+
+<!-- Test commit for Vercel auto-deploy -->
