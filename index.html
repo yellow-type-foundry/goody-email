@@ -619,5 +619,45 @@ The email design content goes in email-design.html, NOT here!
             });
         }
     </script>
+
+        // Load email content from email-design.html
+        function loadEmailContent() {
+            fetch('email-design.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const emailBody = doc.querySelector('body');
+                    if (emailBody) {
+                        const backButton = emailBody.querySelector('.back-button');
+                        const styleSwitcher = emailBody.querySelector('[style*="position: fixed"][style*="bottom: 20px"]');
+                        if (backButton) backButton.remove();
+                        if (styleSwitcher) styleSwitcher.remove();
+                        
+                        const wrapperTable = emailBody.querySelector('table[role="presentation"]');
+                        if (wrapperTable) {
+                            wrapperTable.style.backgroundColor = 'transparent';
+                            const container = document.getElementById('email-content-container');
+                            if (container) {
+                                container.innerHTML = '';
+                                container.appendChild(wrapperTable.cloneNode(true));
+                            }
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading email content:', error);
+                    const container = document.getElementById('email-content-container');
+                    if (container) {
+                        container.innerHTML = '<p style="padding: 20px; color: #5f6368;">Error loading email content</p>';
+                    }
+                });
+        }
+        
+        // Load email content when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadEmailContent();
+        });
+
 </body>
 </html>
