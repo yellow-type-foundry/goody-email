@@ -1,0 +1,14 @@
+# Gmail Mockup Verification File
+# This file exists to remind that index.html MUST be the Gmail mockup
+
+REQUIRED_IN_INDEX_HTML:
+- gmail-container
+- gmail-sidebar  
+- gmail-email-area
+- loadEmailContent() function
+- Gmail top bar
+
+DO_NOT_PUT_IN_INDEX_HTML:
+- email-container (that goes in email-design.html)
+- Direct email content (that goes in email-design.html)
+
