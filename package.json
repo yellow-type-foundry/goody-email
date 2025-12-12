@@ -4,7 +4,9 @@
   "description": "Goody Email Design with Gmail Mockup",
   "scripts": {
     "dev": "live-server --port=3006 --open=/index.html --watch=.",
-    "start": "live-server --port=3006 --open=/index.html --watch=."
+    "start": "live-server --port=3006 --open=/index.html --watch=.",
+    "build": "echo 'No build step required for static site'",
+    "vercel-build": "echo 'No build step required for static site'"
   },
   "devDependencies": {
     "live-server": "^1.2.2"
