@@ -1,0 +1,113 @@
+ASSET EXPORT MANIFEST
+=====================
+
+This document lists all assets exported from Figma for the Goody email template.
+
+IMPORTANT: For maximum email client compatibility, SVG files should be converted to PNG format at both 1x and 2x resolutions. SVGs may not render correctly in Outlook and some mobile email clients.
+
+HEADER ASSETS
+-------------
+1. header-logo-gift.svg
+   - Source: 94cf492e78648ec618c1bdb3cccf3a22f5121c9d.svg
+   - Description: Gift box icon with sparkles (left part of header logo)
+   - Usage: Header logo (left side)
+   - Recommended PNG sizes:
+     * 1x: 60px × 54px
+     * 2x: 120px × 108px
+   - Location in HTML: Header section, left of "goody" text
+
+2. header-logo-text.svg
+   - Source: 08030c53167361b1ed4391ac4d3e16e3478e183f.svg
+   - Description: "goody" text logo (right part of header logo)
+   - Usage: Header logo (right side)
+   - Recommended PNG sizes:
+     * 1x: 63px × 21px
+     * 2x: 126px × 42px
+   - Location in HTML: Header section, right of gift icon
+
+HERO/NOTE CARD ASSETS
+---------------------
+3. hero-note-card.png
+   - Source: be65ff7a4d5590985ec07afece74613eb557b0d1.png
+   - Description: Note card image with decorative elements (green circle, smiley face)
+   - Usage: Personalized message section image
+   - Dimensions:
+     * 1x: 104px × 146px (actual display size)
+     * 2x: 208px × 292px (retina display)
+   - Location in HTML: "From Kate" message card, right side
+
+4. note-card-overlay.svg
+   - Source: 442f3a3f05b12db7ebd5a95edaaed198d70ac892.svg
+   - Description: Decorative overlay frame for note card
+   - Usage: Optional decorative element (may be combined with hero-note-card in final image)
+   - Recommended PNG sizes:
+     * 1x: 126px × 168px
+     * 2x: 252px × 336px
+   - Location in HTML: Overlay for note card (if used separately)
+
+STEP ICONS
+----------
+5. step1-gift-icon.svg
+   - Source: 30546e4ac11df7fbf5865c6b4fb06f2eec7b3e35.svg
+   - Description: Gift box icon for Step 1
+   - Usage: Step 1 illustration (circular background added in HTML/CSS)
+   - Recommended PNG sizes:
+     * 1x: 44px × 44px (icon only, circular container is 80px)
+     * 2x: 88px × 88px
+   - Location in HTML: Step 1 section, centered in circular container
+
+6. step2-location-icon.svg
+   - Source: 7ee6fcf55f3c24c7c9212e179d5ea27f2b630277.svg
+   - Description: Location pin icon for Step 2
+   - Usage: Step 2 illustration (circular background added in HTML/CSS)
+   - Recommended PNG sizes:
+     * 1x: 38px × 46px (icon only, circular container is 80px)
+     * 2x: 76px × 92px
+   - Location in HTML: Step 2 section, centered in circular container
+
+7. step3-message-icon.svg
+   - Source: de1c4ec028cdd012893c8cfe6f7edc8f6a1cb4a9.svg
+   - Description: Message/heart icon for Step 3
+   - Usage: Step 3 illustration (circular background added in HTML/CSS)
+   - Recommended PNG sizes:
+     * 1x: 47px × 42px (icon only, circular container is 80px)
+     * 2x: 94px × 84px
+   - Location in HTML: Step 3 section, centered in circular container
+
+FOOTER ASSETS
+-------------
+8. footer-icon.svg
+   - Source: 05dee64c71fa81745b4c0cb1c897a924934851a6.svg
+   - Description: Gift box icon with sparkles (footer version)
+   - Usage: Footer logo (left part)
+   - Recommended PNG sizes:
+     * 1x: 35px × 32px
+     * 2x: 70px × 64px
+   - Location in HTML: Footer, left of "goody" text
+
+9. footer-logo-text.svg
+   - Source: 7e26e479349167c51ae1620d4b72ded054b2b72a.svg
+   - Description: "goody" text logo (footer version, larger)
+   - Usage: Footer logo (right part)
+   - Recommended PNG sizes:
+     * 1x: 87px × 29px
+     * 2x: 174px × 58px
+   - Location in HTML: Footer, right of footer icon
+
+CONVERSION NOTES
+----------------
+- All SVG files should be converted to PNG format for maximum email client compatibility
+- Use 2x versions for @2x/@3x displays (retina)
+- Consider creating fallback versions for older email clients
+- Test all images in Litmus/Email on Acid before deployment
+
+FILE NAMING CONVENTION
+----------------------
+For PNG exports, use the following naming:
+- 1x: [filename].png
+- 2x: [filename]@2x.png
+
+Example:
+- header-logo-gift.png (1x)
+- header-logo-gift@2x.png (2x)
+

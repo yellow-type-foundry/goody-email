@@ -1,0 +1,238 @@
+QA CHECKLIST - GOODY EMAIL TEMPLATE
+===================================
+
+This checklist should be completed before deploying the email template to production.
+
+PRE-DEPLOYMENT CHECKS
+---------------------
+[ ] All dynamic placeholders are correctly formatted with {{double_curly_braces}}
+[ ] All image paths are correct and images are accessible
+[ ] All links are properly formatted (including {{claim_link}} and {{unsubscribe_link}})
+[ ] No external CSS files referenced
+[ ] No webfont dependencies (using web-safe fonts only)
+[ ] All inline styles are present
+[ ] HTML validates (check with W3C validator)
+[ ] No broken image references
+
+MOBILE TESTING
+--------------
+Test on the following devices/browsers:
+
+iPhone (iOS Mail, Safari, Chrome)
+[ ] Email renders correctly on iPhone SE (smallest screen)
+[ ] Email renders correctly on iPhone 12/13/14 (standard size)
+[ ] Email renders correctly on iPhone 14 Pro Max (largest screen)
+[ ] Text is readable without zooming
+[ ] Buttons are easily tappable (minimum 44x44px touch target)
+[ ] Images scale appropriately
+[ ] Spacing looks correct
+[ ] No horizontal scrolling
+[ ] CTA buttons are prominent and clickable
+
+Android (Gmail, Samsung Mail, Outlook)
+[ ] Email renders correctly on small Android devices (320px width)
+[ ] Email renders correctly on standard Android devices (360-414px width)
+[ ] Email renders correctly on large Android devices (tablets)
+[ ] Text is readable
+[ ] Buttons are easily tappable
+[ ] Images display correctly
+[ ] No layout breaks
+
+Mobile Email Clients - Specific Tests
+[ ] Gmail app (iOS and Android)
+[ ] Apple Mail (iOS)
+[ ] Outlook mobile app (iOS and Android)
+[ ] Yahoo Mail mobile app
+[ ] Samsung Email app
+
+OUTLOOK TESTING
+---------------
+Test in the following Outlook versions:
+
+Desktop Outlook (Windows)
+[ ] Outlook 2016 (Windows)
+[ ] Outlook 2019 (Windows)
+[ ] Outlook 2021 (Windows)
+[ ] Outlook 365 (Windows)
+[ ] Outlook for Mac
+
+Specific Outlook Checks:
+[ ] VML buttons render correctly (not broken)
+[ ] Rounded corners display (may appear square in older Outlook)
+[ ] Shadows display correctly (may not appear in older Outlook)
+[ ] Images display correctly
+[ ] Table layout doesn't break
+[ ] Text is readable
+[ ] Links work correctly
+[ ] No extra spacing or gaps
+[ ] Colors render correctly
+
+Outlook.com (Web)
+[ ] Email renders correctly in Outlook.com web client
+[ ] All interactive elements work
+[ ] Images load correctly
+
+DESKTOP EMAIL CLIENT TESTING
+-----------------------------
+[ ] Apple Mail (macOS)
+[ ] Gmail (web - Chrome)
+[ ] Gmail (web - Firefox)
+[ ] Gmail (web - Safari)
+[ ] Gmail (web - Edge)
+[ ] Yahoo Mail (web)
+[ ] Outlook.com (web)
+[ ] Thunderbird
+
+CONTENT VERIFICATION
+---------------------
+[ ] All placeholder text is replaced with actual values:
+    - {{event.sender_full_name}} → "Kate" (or actual sender name)
+    - {{customer.email}} → Actual customer email
+    - {{claim_link}} → Valid claim URL
+    - {{unsubscribe_link}} → Valid unsubscribe URL
+[ ] "Hi Bao" text should be personalized (if applicable)
+[ ] Message text from sender displays correctly
+[ ] All step instructions are clear and accurate
+[ ] Footer information is correct
+[ ] Company address is correct
+
+ACCESSIBILITY CHECKS
+--------------------
+[ ] All images have descriptive alt text
+[ ] Color contrast meets WCAG AA standards (4.5:1 for normal text, 3:1 for large text)
+[ ] Links are descriptive (not just "click here")
+[ ] Email is readable in high contrast mode
+[ ] Email is readable when images are disabled
+[ ] Text can be resized without breaking layout
+
+IMAGE TESTING
+-------------
+[ ] All images load correctly
+[ ] Images display at correct sizes
+[ ] Retina/2x images are used where appropriate
+[ ] Images have appropriate alt text
+[ ] Images don't break layout when disabled
+[ ] Image file sizes are optimized (under 200KB each recommended)
+
+LINK TESTING
+------------
+[ ] All "Accept my gift" buttons link to {{claim_link}}
+[ ] Unsubscribe link works correctly
+[ ] Footer links (Terms of Use, Privacy Policy) work correctly
+[ ] All links open in correct window/tab
+[ ] No broken links
+
+SPAM FILTER TESTING
+-------------------
+[ ] Email passes SpamAssassin checks
+[ ] Email passes other common spam filters
+[ ] Sender reputation is good
+[ ] SPF, DKIM, and DMARC records are configured
+[ ] Email doesn't trigger spam keywords
+
+HOW TO PREVIEW LOCALLY
+----------------------
+1. Open the email.html file in a web browser:
+   - Double-click email.html, or
+   - Right-click → Open With → Browser, or
+   - Drag and drop into browser window
+
+2. Note: Local preview will show:
+   - Placeholder text ({{event.sender_full_name}}, etc.)
+   - Relative image paths (images/header-logo-gift.svg)
+   - Links may not work (they use {{claim_link}} placeholder)
+
+3. For accurate testing:
+   - Use a local email testing tool (see below)
+   - Upload to Litmus/Email on Acid
+   - Send test emails to yourself
+
+LOCAL EMAIL TESTING TOOLS
+--------------------------
+1. MailHog (https://github.com/mailhog/MailHog)
+   - Captures emails sent from local development
+   - View emails in web interface
+   - Useful for testing email sending functionality
+
+2. Mailtrap (https://mailtrap.io/)
+   - Free tier available
+   - Captures test emails
+   - Preview in browser
+
+3. Papercut (https://github.com/ChangemakerStudios/Papercut)
+   - Simple SMTP server for testing
+   - View emails in desktop app
+
+HOW TO TEST VIA LITMUS
+----------------------
+1. Sign up for Litmus account (https://litmus.com/)
+2. Upload email.html to Litmus
+3. Replace placeholders with test data:
+   - {{event.sender_full_name}} → "Kate"
+   - {{customer.email}} → "test@example.com"
+   - {{claim_link}} → "https://example.com/claim"
+   - {{unsubscribe_link}} → "https://example.com/unsubscribe"
+4. Test in all available email clients
+5. Review screenshots and notes
+6. Fix any issues found
+7. Re-test after fixes
+
+HOW TO TEST VIA EMAIL ON ACID
+------------------------------
+1. Sign up for Email on Acid account (https://www.emailonacid.com/)
+2. Upload email.html to Email on Acid
+3. Replace placeholders with test data (same as Litmus)
+4. Run tests across all email clients
+5. Review results and fix issues
+6. Re-test after fixes
+
+COMMON ISSUES TO WATCH FOR
+--------------------------
+[ ] Images not loading (check paths and file permissions)
+[ ] Buttons not clickable (check VML code for Outlook)
+[ ] Text too small on mobile (check media queries)
+[ ] Layout breaking in Outlook (check table structure)
+[ ] Colors not displaying correctly (check hex codes)
+[ ] Spacing issues (check padding/margin values)
+[ ] Rounded corners appearing square in Outlook (expected, but verify)
+[ ] Shadows not appearing in Outlook (expected, but verify)
+[ ] Gradient buttons not working in Outlook (VML should handle this)
+
+FINAL CHECKLIST BEFORE DEPLOYMENT
+----------------------------------
+[ ] All tests passed
+[ ] All placeholders documented
+[ ] All images optimized and uploaded to CDN
+[ ] All links tested and working
+[ ] Email renders correctly in target email clients
+[ ] Mobile experience is excellent
+[ ] Accessibility requirements met
+[ ] Spam filter tests passed
+[ ] Code is clean and commented (if needed)
+[ ] Version control updated
+[ ] Deployment plan documented
+
+NOTES
+-----
+- Outlook 2007-2016 use Word rendering engine, which has limited CSS support
+- Some CSS properties (like border-radius, box-shadow) may not work in older Outlook
+- VML is required for gradient buttons in Outlook
+- Always test with images disabled to ensure email is still readable
+- Test with different email lengths to ensure layout doesn't break
+- Consider dark mode compatibility (if applicable)
+
+TEST DATA TEMPLATE
+------------------
+Use this test data when replacing placeholders:
+
+{{event.sender_full_name}} → "Kate"
+{{customer.email}} → "test@example.com"
+{{claim_link}} → "https://goody.com/claim?token=test123"
+{{unsubscribe_link}} → "https://goody.com/unsubscribe?token=test456"
+
+For personalized testing, also test with:
+- Long names: "Kate Elizabeth Smith-Johnson"
+- Short names: "Kate"
+- Special characters: "Kate O'Brien"
+- International characters: "Kate Müller"
+
