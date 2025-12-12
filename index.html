@@ -1,745 +1,475 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gmail Mockup - Goody Email</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Kate sent you a gift</title>
     <!-- Lottie Animation Player -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
+    <!--[if mso]>
+    <style type="text/css">
+        body, table, td {font-family: Arial, sans-serif !important;}
+    </style>
+    <![endif]-->
+    <style type="text/css">
+        /* Back button styles */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background-color: #ffffff;
+            border: 1px solid #dadce0;
+            border-radius: 24px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #202124;
             font-family: 'Google Sans Flex', 'Google Sans', Roboto, Arial, sans-serif;
-            background-color: #f6f8fc;
-            height: 100vh;
-            overflow: hidden;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            transition: box-shadow 0.2s;
         }
         
-        /* Font face declarations for email */
+        .back-button:hover {
+            box-shadow: 0 2px 6px rgba(0,0,0,0.16);
+        }
+        
+        /* Font face declarations */
         @font-face {
             font-family: 'Reckless Neue TRIAL';
-            src: url('assets/RecklessNeueTRIAL-Book.otf') format('opentype');
+            src: url('/assets/RecklessNeueTRIAL-Book.otf') format('opentype');
             font-weight: 250;
             font-style: normal;
         }
         
         @font-face {
             font-family: 'Goody Sans';
-            src: url('assets/Goody_Sans/Goody_Sans-Regular.otf') format('opentype');
+            src: url('/assets/Goody_Sans/Goody_Sans-Regular.otf') format('opentype');
             font-weight: 400;
             font-style: normal;
         }
         
         @font-face {
             font-family: 'Goody Sans';
-            src: url('assets/Goody_Sans/Goody_Sans-Semibold.otf') format('opentype');
+            src: url('/assets/Goody_Sans/Goody_Sans-Semibold.otf') format('opentype');
             font-weight: 600;
             font-style: normal;
         }
         
         @font-face {
             font-family: 'Goody Sans';
-            src: url('assets/Goody_Sans/Goody_Sans-Bold.otf') format('opentype');
+            src: url('/assets/Goody_Sans/Goody_Sans-Bold.otf') format('opentype');
             font-weight: 700;
             font-style: normal;
         }
         
-        /* Gmail Top Bar */
-        .gmail-top-bar {
-            background-color: #ffffff;
-            border-bottom: 1px solid #dadce0;
-            padding: 8px 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 64px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
+        /* Reset styles */
+        body, table, td, p, a, li, blockquote {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
         }
-        
-        .gmail-top-bar-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-shrink: 0;
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
         }
-        
-        .gmail-menu-icon {
-            width: 24px;
-            height: 24px;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        
-        .gmail-menu-icon:hover {
-            background-color: #f1f3f4;
-        }
-        
-        .gmail-logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #5f6368;
-            font-size: 22px;
-            font-weight: 400;
-            flex-shrink: 0;
-        }
-        
-        .gmail-search {
-            flex: 1;
-            max-width: 720px;
-            min-width: 400px;
-            background-color: #f1f3f4;
-            border-radius: 24px;
-            padding: 0 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            height: 48px;
-            margin: 0 auto;
-        }
-        
-        .gmail-search-icon {
-            width: 20px;
-            height: 20px;
-            opacity: 0.6;
-            flex-shrink: 0;
-        }
-        
-        .gmail-search input {
-            flex: 1;
-            border: none;
-            background: transparent;
-            font-size: 14px;
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
             outline: none;
-            min-width: 0;
+            text-decoration: none;
+            display: block;
         }
         
-        .gmail-top-icons {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-shrink: 0;
-            margin-left: 16px;
+        /* Mobile styles */
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .main-content {
+                width: 100% !important;
+                padding: 60px 20px !important;
+            }
+            .header-logo {
+                width: 151px !important;
+            }
+            .hero-heading {
+                font-size: 36px !important;
+                line-height: 40px !important;
+            }
+            .hero-text {
+                font-size: 16px !important;
+                line-height: 24px !important;
+            }
+            .section-heading {
+                font-size: 32px !important;
+                line-height: 36px !important;
+            }
+            .step-icon {
+                width: 60px !important;
+                height: 60px !important;
+            }
+            .step-text {
+                font-size: 16px !important;
+                line-height: 24px !important;
+            }
+            .message-card {
+                padding: 20px !important;
+            }
+            .note-card-image {
+                width: 100px !important;
+                height: auto !important;
+            }
         }
         
-        .gmail-icon-button {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: none;
-            background: transparent;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* Entrance Tooltip Styles */
+        .entrance-tooltip {
+            position: fixed;
+            z-index: 10001;
+            pointer-events: none;
+            animation: tooltip-fade-in 0.3s ease-out;
         }
         
-        .gmail-icon-button:hover {
-            background-color: #f1f3f4;
+        @keyframes tooltip-fade-in {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
         }
         
-        .gmail-profile {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background-color: #1a73e8;
+        .entrance-tooltip-content {
+            background-color: #1f2937;
             color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            font-weight: 500;
-            margin-left: 8px;
-        }
-        
-        /* Main Layout */
-        .gmail-container {
-            display: flex;
-            height: 100vh;
-            padding-top: 64px;
-        }
-        
-        /* Left Sidebar */
-        .gmail-sidebar {
-            width: 256px;
-            background-color: #ffffff;
-            border-right: 1px solid #dadce0;
-            padding: 8px;
-            overflow-y: auto;
-        }
-        
-        .gmail-compose {
-            background-color: #c2e7ff;
-            border: none;
-            border-radius: 24px;
-            padding: 14px 24px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #001d35;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            width: 100%;
-            margin-bottom: 16px;
-        }
-        
-        .gmail-compose:hover {
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-        }
-        
-        .gmail-nav-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
             padding: 8px 12px;
-            border-radius: 0 24px 24px 0;
-            cursor: pointer;
-            color: #202124;
-            font-size: 14px;
-            margin: 2px 0;
-        }
-        
-        .gmail-nav-item:hover {
-            background-color: #f1f3f4;
-        }
-        
-        .gmail-nav-item.active {
-            background-color: #d3e3fd;
-            color: #001d35;
-            font-weight: 500;
-        }
-        
-        .gmail-nav-item .badge {
-            margin-left: auto;
-            background-color: #ea4335;
-            color: white;
-            border-radius: 10px;
-            padding: 2px 6px;
+            border-radius: 6px;
             font-size: 12px;
             font-weight: 500;
-        }
-        
-        /* Email View Area */
-        .gmail-email-area {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            background-color: #ffffff;
-        }
-        
-        .gmail-email-header {
-            padding: 16px 24px;
-            border-bottom: 1px solid #dadce0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .gmail-email-header-left {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .gmail-email-header-right {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .gmail-email-info {
-            padding: 16px 24px;
-            border-bottom: 1px solid #dadce0;
-        }
-        
-        .gmail-email-subject {
+            white-space: nowrap;
             font-family: 'Google Sans Flex', 'Google Sans', Roboto, Arial, sans-serif;
-            font-size: 22px;
-            font-weight: 400;
-            color: #202124;
-            margin-bottom: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: relative;
         }
         
-        .gmail-email-meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 14px;
-            color: #5f6368;
-            font-family: 'Google Sans Flex', 'Google Sans', Roboto, Arial, sans-serif;
-        }
-        
-        .gmail-email-meta-left {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .gmail-email-meta-right {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .gmail-email-body {
-            flex: 1;
-            overflow-y: auto;
-            background-color: #ffffff;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .gmail-email-content {
-            margin: 0 auto;
-            max-width: 960px;
-            width: 100%;
-        }
-        
-        /* Email content styles */
-        .gmail-email-content table {
-            margin: 0 auto;
-        }
-        
-        /* Hide the style switcher tabs in Gmail mockup */
-        .gmail-email-content .style-switcher {
-            display: none;
+        .entrance-tooltip-arrow {
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid #1f2937;
         }
     </style>
 </head>
-<body>
-    <!-- Gmail Top Bar -->
-    <div class="gmail-top-bar">
-        <div class="gmail-top-bar-left">
-            <div class="gmail-menu-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="#5f6368"/>
-                </svg>
-            </div>
-            <div class="gmail-logo">
-                <img src="images/gmail logo.svg" alt="Gmail" style="height: 28px; width: auto; display: block;">
-                <span>Gmail</span>
-            </div>
-        </div>
-        <div class="gmail-search">
-            <svg class="gmail-search-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#5f6368"/>
-            </svg>
-            <input type="text" placeholder="Search mail" />
-        </div>
-        <div class="gmail-top-icons">
-            <button class="gmail-icon-button">
-                <svg width="20" height="20" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#5f6368"/>
-                </svg>
-            </button>
-            <button class="gmail-icon-button">
-                <svg width="20" height="20" viewBox="0 0 24 24">
-                    <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94L14.4 2.81c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" fill="#5f6368"/>
-                </svg>
-            </button>
-            <button class="gmail-icon-button">
-                <svg width="20" height="20" viewBox="0 0 24 24">
-                    <path d="M6 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6 12c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-6 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0-6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-10c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-6 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" fill="#5f6368"/>
-                </svg>
-            </button>
-            <div class="gmail-profile">S</div>
-        </div>
+<body style="margin: 0; padding: 0; background-color: #F0F1F5; font-family: 'Goody Sans', Helvetica, Arial, sans-serif;">
+    <!-- Back Button -->
+    <a href="gmail-mockup.html" class="back-button">
+        <svg width="20" height="20" viewBox="0 0 24 24">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="currentColor"/>
+        </svg>
+        <span>Back to Gmail</span>
+    </a>
+    
+    <!-- Style Toggle Tabs (iOS 7 style) -->
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; background-color: #ffffff; border-radius: 6px; border: 1px solid #c7c7cc; overflow: hidden; box-shadow: 0px 1px 3px rgba(0,0,0,0.1);">
+        <button id="style1-tab" onclick="switchStyle(1)" style="padding: 6px 16px; border: none; background-color: #007aff; color: #ffffff; cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 500; border-right: 1px solid #c7c7cc;">1</button>
+        <button id="style2-tab" onclick="switchStyle(2)" style="padding: 6px 16px; border: none; background-color: #ffffff; color: #007aff; cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 500;">2</button>
     </div>
     
-    <!-- Main Container -->
-    <div class="gmail-container">
-        <!-- Left Sidebar -->
-        <div class="gmail-sidebar">
-            <button class="gmail-compose">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="currentColor"/>
-                </svg>
-                Compose
-            </button>
-            <div class="gmail-nav-item active">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
-                </svg>
-                <span>Inbox</span>
-                <span class="badge">1</span>
-            </div>
-            <div class="gmail-nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="currentColor"/>
-                </svg>
-                <span>Starred</span>
-            </div>
-            <div class="gmail-nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
-                </svg>
-                <span>Snoozed</span>
-            </div>
-            <div class="gmail-nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/>
-                </svg>
-                <span>Sent</span>
-            </div>
-            <div class="gmail-nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" fill="currentColor"/>
-                </svg>
-                <span>Drafts</span>
-            </div>
-            <a href="email-design.html" class="gmail-nav-item" style="text-decoration: none; color: #202124;">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
-                </svg>
-                <span>Email Design</span>
-            </a>
-        </div>
-        
-        <!-- Email View Area -->
-        <div class="gmail-email-area">
-            <div class="gmail-email-header">
-                <div class="gmail-email-header-left">
-                    <button class="gmail-icon-button">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#5f6368"/>
-                        </svg>
-                    </button>
-                    <button class="gmail-icon-button">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M20 6H4l2 14h12l2-14zm-6 8c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z" fill="#5f6368"/>
-                        </svg>
-                    </button>
-                    <button class="gmail-icon-button">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" fill="#5f6368"/>
-                        </svg>
-                    </button>
-                    <div style="width: 1px; height: 24px; background-color: #dadce0; margin: 0 8px;"></div>
-                    <button class="gmail-icon-button">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#5f6368"/>
-                        </svg>
-                    </button>
-                    <button class="gmail-icon-button">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#5f6368"/>
-                        </svg>
-                    </button>
-                    <button class="gmail-icon-button">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="#5f6368"/>
-                        </svg>
-                    </button>
-                </div>
-                <div class="gmail-email-header-right">
-                    <span style="font-size: 12px; color: #5f6368; margin-right: 16px;">1 of 305</span>
-                    <button class="gmail-icon-button" onclick="toggleEmailStyle()" title="Toggle Style">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="#5f6368"/>
-                        </svg>
-                    </button>
-                    <button class="gmail-icon-button" onclick="toggleEmailStyle()" title="Toggle Style">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#5f6368"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="gmail-email-info">
-                <div class="gmail-email-subject">Kate sent you a gift</div>
-                <div class="gmail-email-meta">
-                    <div class="gmail-email-meta-left">
-                        <span style="font-weight: 500; color: #202124;">Kate via Goody</span>
-                        <span>&lt;gifts@notify.ongoody.com&gt;</span>
-                    </div>
-                    <div class="gmail-email-meta-right">
-                        <span>to me</span>
-                        <span>•</span>
-                        <span>Tue, Dec 12, 9:37 PM</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gmail-email-body">
-                <div class="gmail-email-content">
-                    <!-- Embedded Email Content -->
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff;">
-                        <tr>
-                            <td align="center" style="padding: 0;">
-                                <!-- Main container: scales to fit -->
-                                <table role="presentation" class="email-container" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 960px; width: 100%; margin: 0 auto; background-color: #ffffff; position: relative; overflow: hidden; padding-bottom: 60px;">
-                                    <!-- Animation Container with Logo -->
+    <!-- Wrapper table for centering -->
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F0F1F5;">
+            <tr>
+                <td align="center" style="padding: 60px;">
+                    <!-- Main container: 800px -->
+                    <table role="presentation" class="email-container" cellspacing="0" cellpadding="0" border="0" width="800" style="max-width: 800px; width: 100%; background-color: #ffffff; border: 1px solid #dde2e9; position: relative; border-radius: 8px; overflow: hidden; padding-bottom: 60px; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.05), 0px 8px 24px -4px rgba(0,0,0,0.05), 0px 8px 32px -8px rgba(0,0,0,0.05);">
+                    <!-- Animation Container with Logo -->
+                    <tr>
+                        <td align="center" style="padding: 0 0 20px 0; background-color: #ffffff; position: relative;">
+                            <img src="/images/Logo.svg" alt="Goody" class="header-logo" style="display: block; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 151px; height: 44px; z-index: 10;">
+                            <div id="lottie-animation" style="width: 100%; max-width: 960px; margin: 0 auto; background-color: #ffffff; text-align: center;"></div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Hero Section -->
+                    <tr>
+                        <td align="center" style="padding: 0 60px 20px 60px; background-color: #ffffff; transform: translateY(-32px);">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding-bottom: 24px;">
+                                        <h1 class="hero-heading" style="margin: 0; font-family: 'Reckless Neue TRIAL', Georgia, serif; font-size: 56px; font-weight: 250; line-height: 50px; color: #000000; text-align: center; letter-spacing: -1px;">Kate sent you a gift</h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding-bottom: 24px;">
+                                        <p class="hero-text" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: center; max-width: 629px;">Hi Bao, Goody is a gifting service that Kate is using to send you a gift of your choice. Simply follow the instructions below to claim it:</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://goody.com/claim?token=abc123xyz" style="height:56px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#5a3dff">
+                                        <w:anchorlock/>
+                                        <center style="color:#ffffff;font-family:'Goody Sans', Helvetica, Arial, sans-serif;font-size:20px;font-weight:bold;">Accept my gift</center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                        <!--[if !mso]><!-- -->
+                                        <a href="https://goody.com/claim?token=abc123xyz" style="display: inline-block; background: linear-gradient(to bottom, #5a3dff 0%, #a799ff 100%); background-color: #5a3dff; border-radius: 34px; color: #ffffff; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center; padding: 16px 28px 20px 28px; box-shadow: 0px 1px 8px 0px inset rgba(255,255,255,0.75);">Accept my gift</a>
+                                        <!--<![endif]-->
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- Message Card Section -->
+                    <tr>
+                        <td align="center" style="padding: 0 60px 0 60px; background-color: #ffffff; overflow: visible;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="629" class="message-card" style="width: 100%; max-width: 629px; background-color: #ffffff; border: 1px solid #dde2e9; border-radius: 24px; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.03), 0px 16px 48px -4px rgba(0,0,0,0.05), 0px 20px 80px -8px rgba(0,0,0,0.02); overflow: visible;">
+                                <tr>
+                                    <td style="padding: 24px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tr>
+                                                <td style="padding: 0 12px 12px 12px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td style="padding-right: 24px; vertical-align: middle;" width="389">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td style="padding-bottom: 8px;">
+                                                                <p style="margin: 0; font-family: 'Caveat', Georgia, serif; font-size: 28px; font-weight: 700; line-height: 28px; color: #7f53fd;">From Kate</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 25.2px; color: #000000;">"Bao - We wanted to take a moment to thank you for your continued support. We truly appreciate your partnership and dedication."</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="vertical-align: top;" width="144" align="right">
+                                                    <div style="position: relative; width: 144px; height: 160px;">
+                                                        <!-- Back Card (overlay, rotated 8deg) -->
+                                                        <div style="position: absolute; left: 20.35px; top: 0.71px; width: 123.307px; height: 159.053px; display: flex; align-items: center; justify-content: center;">
+                                                            <div style="transform: rotate(8deg);">
+                                                                <div style="width: 104px; height: 146px; position: relative;">
+                                                                    <div style="position: absolute; inset: -4.79% -10.58% -10.27% -10.58%;">
+                                                                        <img src="/images/note-card-overlay.svg" alt="" style="width: 100%; height: 100%; display: block; max-width: none;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Front Card (with border, rotated 352deg) -->
+                                                        <div style="position: absolute; left: 0; top: 0.24px; width: 123.307px; height: 159.053px; display: flex; align-items: center; justify-content: center;">
+                                                            <div style="transform: rotate(352deg);">
+                                                                <div style="width: 104px; height: 146px; border: 3px solid #ffffff; border-radius: 4px; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.05), 0px 8px 24px -4px rgba(0,0,0,0.05), 0px 8px 32px -8px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                                                                    <img src="/images/be65ff7a4d5590985ec07afece74613eb557b0d1.png" alt="Thank you note card" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; pointer-events: none; border-radius: 4px; display: block; max-width: none;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- Instructions Section -->
+                    <tr>
+                        <td align="center" style="padding: 60px 0 0 0; background-color: transparent;">
+                            <div style="width: 100%; max-width: 100%;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
-                                        <td align="center" style="padding: 0 0 20px 0; background-color: #ffffff; position: relative;">
-                                            <img src="images/Logo.svg" alt="Goody" class="header-logo" style="display: block; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 151px; height: 44px; z-index: 10;">
-                                            <div id="lottie-animation" style="width: 100%; max-width: 100%; margin: 0 auto; background-color: #ffffff; text-align: center;"></div>
+                                        <td align="center" style="padding-bottom: 40px;">
+                                            <h2 class="section-heading" style="margin: 0; font-family: 'Reckless Neue TRIAL', Georgia, serif; font-size: 48px; font-weight: 250; line-height: 48px; color: #000000; text-align: center; letter-spacing: -1px; max-width: 501px;">First time receiving a gift on Goody?</h2>
                                         </td>
                                     </tr>
                                     
-                                    <!-- Hero Section -->
+                                    <!-- Step 1 -->
                                     <tr>
-                                        <td align="center" style="padding: 0 60px 20px 60px; background-color: #ffffff; transform: translateY(-32px);">
-                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <td align="center" style="padding-bottom: 40px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="412" style="max-width: 100%;">
                                                 <tr>
-                                                    <td align="center" style="padding-bottom: 24px;">
-                                                        <h1 class="hero-heading" style="margin: 0; font-family: 'Reckless Neue TRIAL', Georgia, serif; font-size: 56px; font-weight: 250; line-height: 50px; color: #000000; text-align: center; letter-spacing: -1px;">Kate sent you a gift</h1>
+                                                    <td align="center" class="step-image-container" style="padding-bottom: 16px;">
+                                                        <img src="/images/Step 01.png" alt="Step 1 illustration" class="step-icon step-1-img" data-style1="/images/Step 01.png" data-style2="/images/Instruction Step Header01.png" data-style1-width="80" data-style1-height="80" data-style2-width="265" data-style2-height="142" style="display: block; width: 80px; height: 80px; margin: 0 auto;">
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="center" style="padding-bottom: 24px;">
-                                                        <p class="hero-text" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: center; max-width: 629px;">Hi Bao, Goody is a gifting service that Kate is using to send you a gift of your choice. Simply follow the instructions below to claim it:</p>
+                                                    <td align="center" style="padding-bottom: 4px;">
+                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; line-height: 27px; color: #713df5; text-align: center;">STEP 1</p>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td align="center">
-                                                        <a href="https://goody.com/claim?token=abc123xyz" style="display: inline-block; background: linear-gradient(to bottom, #5a3dff 0%, #a799ff 100%); background-color: #5a3dff; border-radius: 34px; color: #ffffff; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center; padding: 16px 28px 20px 28px; box-shadow: 0px 1px 8px 0px inset rgba(255,255,255,0.75);">Accept my gift</a>
+                                                        <p class="step-text" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: center; max-width: 318px;">Click 'Select My Gift' to pick your favorite gift from the options that Kate sent you.</p>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
                                     </tr>
                                     
-                                    <!-- Message Card Section -->
+                                    <!-- Step 2 -->
                                     <tr>
-                                        <td align="center" style="padding: 0 60px 0 60px; background-color: #ffffff; overflow: visible;">
-                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="629" class="message-card" style="width: 100%; max-width: 629px; background-color: #ffffff; border: 1px solid #dde2e9; border-radius: 24px; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.03), 0px 16px 48px -4px rgba(0,0,0,0.05), 0px 20px 80px -8px rgba(0,0,0,0.02); overflow: visible;">
+                                        <td align="center" style="padding-bottom: 40px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="412" style="max-width: 100%;">
                                                 <tr>
-                                                    <td style="padding: 24px;">
-                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                            <tr>
-                                                                <td style="padding: 0 12px 12px 12px;">
-                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                                        <tr>
-                                                                            <td style="padding-right: 24px; vertical-align: middle;" width="389">
-                                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                                                    <tr>
-                                                                                        <td style="padding-bottom: 8px;">
-                                                                                            <p style="margin: 0; font-family: 'Caveat', Georgia, serif; font-size: 28px; font-weight: 700; line-height: 28px; color: #7f53fd;">From Kate</p>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td>
-                                                                                            <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 25.2px; color: #000000;">"Bao - We wanted to take a moment to thank you for your continued support. We truly appreciate your partnership and dedication."</p>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                            <td style="vertical-align: top;" width="144" align="right">
-                                                                                <div style="position: relative; width: 144px; height: 160px;">
-                                                                                    <!-- Back Card (overlay, rotated 8deg) -->
-                                                                                    <div style="position: absolute; left: 20.35px; top: 0.71px; width: 123.307px; height: 159.053px; display: flex; align-items: center; justify-content: center;">
-                                                                                        <div style="transform: rotate(8deg);">
-                                                                                            <div style="width: 104px; height: 146px; position: relative;">
-                                                                                                <div style="position: absolute; inset: -4.79% -10.58% -10.27% -10.58%;">
-                                                                                                    <img src="images/note-card-overlay.svg" alt="" style="width: 100%; height: 100%; display: block; max-width: none;">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <!-- Front Card (with border, rotated 352deg) -->
-                                                                                    <div style="position: absolute; left: 0; top: 0.24px; width: 123.307px; height: 159.053px; display: flex; align-items: center; justify-content: center;">
-                                                                                        <div style="transform: rotate(352deg);">
-                                                                                            <div style="width: 104px; height: 146px; border: 3px solid #ffffff; border-radius: 4px; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.05), 0px 8px 24px -4px rgba(0,0,0,0.05), 0px 8px 32px -8px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
-                                                                                                <img src="images/be65ff7a4d5590985ec07afece74613eb557b0d1.png" alt="Thank you note card" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; pointer-events: none; border-radius: 4px; display: block; max-width: none;">
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
+                                                    <td align="center" class="step-image-container" style="padding-bottom: 16px;">
+                                                        <img src="/images/Step 02.png" alt="Step 2 illustration" class="step-icon step-2-img" data-style1="/images/Step 02.png" data-style2="/images/Instruction Step Header02.png" data-style1-width="80" data-style1-height="80" data-style2-width="244" data-style2-height="142" style="display: block; width: 80px; height: 80px; margin: 0 auto;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="padding-bottom: 4px;">
+                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; line-height: 27px; color: #713df5; text-align: center;">STEP 2</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center">
+                                                        <p class="step-text" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: center; max-width: 335px;">Enter the address you'd like us to deliver your gift to.</p>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
                                     </tr>
                                     
-                                    <!-- Instructions Section -->
+                                    <!-- Step 3 -->
                                     <tr>
-                                        <td align="center" style="padding: 60px 0 0 0; background-color: transparent;">
-                                            <div style="width: 100%; max-width: 100%;">
-                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                    <tr>
-                                                        <td align="center" style="padding-bottom: 40px;">
-                                                            <h2 class="section-heading" style="margin: 0; font-family: 'Reckless Neue TRIAL', Georgia, serif; font-size: 48px; font-weight: 250; line-height: 48px; color: #000000; text-align: center; letter-spacing: -1px; max-width: 501px;">First time receiving a gift on Goody?</h2>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <!-- Step 1 -->
-                                                    <tr>
-                                                        <td align="center" style="padding-bottom: 40px;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="412" style="max-width: 100%;">
-                                                                <tr>
-                                                                    <td align="center" class="step-image-container" style="padding-bottom: 16px;">
-                                                                        <img src="images/Step 01.png" alt="Step 1 illustration" class="step-icon" data-style1="images/Step 01.png" data-style2="images/Instruction Step Header01.png" data-style1-width="80" data-style1-height="80" data-style2-width="265" data-style2-height="142" style="display: block; width: 80px; height: 80px; margin: 0 auto;">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 4px;">
-                                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; line-height: 27px; color: #713df5; text-align: center;">STEP 1</p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center">
-                                                                        <p class="step-text" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: center; max-width: 318px;">Click 'Select My Gift' to pick your favorite gift from the options that Kate sent you.</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <!-- Step 2 -->
-                                                    <tr>
-                                                        <td align="center" style="padding-bottom: 40px;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="412" style="max-width: 100%;">
-                                                                <tr>
-                                                                    <td align="center" class="step-image-container" style="padding-bottom: 16px;">
-                                                                        <img src="images/Step 02.png" alt="Step 2 illustration" class="step-icon" data-style1="images/Step 02.png" data-style2="images/Instruction Step Header02.png" data-style1-width="80" data-style1-height="80" data-style2-width="244" data-style2-height="142" style="display: block; width: 80px; height: 80px; margin: 0 auto;">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 4px;">
-                                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; line-height: 27px; color: #713df5; text-align: center;">STEP 2</p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center">
-                                                                        <p class="step-text" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: center; max-width: 335px;">Enter the address you'd like us to deliver your gift to.</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <!-- Step 3 -->
-                                                    <tr>
-                                                        <td align="center" style="padding-bottom: 40px;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="412" style="max-width: 100%;">
-                                                                <tr>
-                                                                    <td align="center" class="step-image-container" style="padding-bottom: 16px;">
-                                                                        <img src="images/Step 03.png" alt="Step 3 illustration" class="step-icon" data-style1="images/Step 03.png" data-style2="images/Instruction Step Header03.png" data-style1-width="80" data-style1-height="80" data-style2-width="200" data-style2-height="142" style="display: block; width: 80px; height: 80px; margin: 0 auto;">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 4px;">
-                                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; line-height: 27px; color: #713df5; text-align: center;">STEP 3</p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center">
-                                                                        <p class="step-text" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: center; max-width: 376px;">(Optional) Write Kate a thank you note to let them know you appreciate their gift.</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <!-- Second CTA Button -->
-                                                    <tr>
-                                                        <td align="center">
-                                                            <a href="https://goody.com/claim?token=abc123xyz" style="display: inline-block; background: linear-gradient(to bottom, #5a3dff 0%, #a799ff 100%); background-color: #5a3dff; border-radius: 34px; color: #ffffff; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center; padding: 16px 28px 20px 28px; box-shadow: 0px 1px 8px 0px inset rgba(255,255,255,0.75);">Accept my gift</a>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
+                                        <td align="center" style="padding-bottom: 40px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="412" style="max-width: 100%;">
+                                                <tr>
+                                                    <td align="center" class="step-image-container" style="padding-bottom: 16px;">
+                                                        <img src="/images/Step 03.png" alt="Step 3 illustration" class="step-icon step-3-img" data-style1="/images/Step 03.png" data-style2="/images/Instruction Step Header03.png" data-style1-width="80" data-style1-height="80" data-style2-width="201" data-style2-height="142" style="display: block; width: 80px; height: 80px; margin: 0 auto;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="padding-bottom: 4px;">
+                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; line-height: 27px; color: #713df5; text-align: center;">STEP 3</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center">
+                                                        <p class="step-text" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: center; max-width: 376px;">(Optional) Write Kate a thank you note to let them know you appreciate their gift.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </td>
                                     </tr>
                                     
-                                    <!-- Footer -->
+                                    <!-- Second CTA Button -->
                                     <tr>
-                                        <td align="center" style="padding: 60px 0 0 0; background-color: #ffffff;">
-                                            <div style="width: 100%; max-width: 100%;">
-                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                        <td align="center">
+                                            <!--[if mso]>
+                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://goody.com/claim?token=abc123xyz" style="height:56px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#5a3dff">
+                                            <w:anchorlock/>
+                                            <center style="color:#ffffff;font-family:'Goody Sans', Helvetica, Arial, sans-serif;font-size:20px;font-weight:bold;">Accept my gift</center>
+                                            </v:roundrect>
+                                            <![endif]-->
+                                            <!--[if !mso]><!-- -->
+                                            <a href="https://goody.com/claim?token=abc123xyz" style="display: inline-block; background: linear-gradient(to bottom, #5a3dff 0%, #a799ff 100%); background-color: #5a3dff; border-radius: 34px; color: #ffffff; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center; padding: 16px 28px 20px 28px; box-shadow: 0px 1px 8px 0px inset rgba(255,255,255,0.75);">Accept my gift</a>
+                                            <!--<![endif]-->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center" style="padding: 60px 0 0 0; background-color: #ffffff;">
+                            <div style="width: 100%; max-width: 100%;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0">
                                                     <!-- Footer Logo -->
                                                     <tr>
                                                         <td align="center" style="padding-bottom: 32px;">
-                                                            <img src="images/Given on Goody.png" alt="Given on Goody" width="196" height="32" style="display: block; height: 32px; width: 196px; max-width: 100%;">
+                                                            <img src="/images/Given on Goody.png" alt="Given on Goody" width="196" height="32" style="display: block; height: 32px; width: 196px; max-width: 100%;">
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    <!-- AICPA SOC Logo -->
+                                                    <tr>
+                                                        <td align="center" style="padding-bottom: 0;">
+                                                            <img src="/images/AICPA SOC.png" alt="AICPA SOC" style="display: block; max-width: 100%; height: auto;">
                                                         </td>
                                                     </tr>
                                                     
                                                     <!-- Footer Text -->
-                                                    <tr>
-                                                        <td align="center" style="padding: 0 60px;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="630" style="max-width: 100%;">
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 8px;">
-                                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">kate@example.com is using Goody to send you a gift.</p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 8px;">
-                                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">To opt out of all gifts, <a href="https://goody.com/unsubscribe?token=xyz789abc" style="color: #8d61c2; text-decoration: underline;">click here to unsubscribe</a>.</p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 8px;">
-                                                                        <p style="margin: 0; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">&nbsp;</p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center">
-                                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">Goody <a href="#" style="color: #484848; text-decoration: underline;">Terms of Use</a> and <a href="#" style="color: #484848; text-decoration: underline;">Privacy Policy</a></p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 8px;">
-                                                                        <p style="margin: 0; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">&nbsp;</p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 4px;">
-                                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">Goody Technologies, Inc.</p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 4px;">
-                                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">9450 SW Gemini Dr, PMB 88760</p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center">
-                                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">Beaverton, OR, 97008</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+                                    <tr>
+                                        <td align="center" style="padding: 0 60px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="630" style="max-width: 100%;">
+                                            <tr>
+                                                <td align="center" style="padding-bottom: 8px;">
+                                                    <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">kate@example.com is using Goody to send you a gift.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding-bottom: 8px;">
+                                                    <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">To opt out of all gifts, <a href="https://goody.com/unsubscribe?token=xyz789abc" style="color: #8d61c2; text-decoration: underline;">click here to unsubscribe</a>.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding-bottom: 8px;">
+                                                    <p style="margin: 0; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">&nbsp;</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">Goody <a href="#" style="color: #484848; text-decoration: underline;">Terms of Use</a> and <a href="#" style="color: #484848; text-decoration: underline;">Privacy Policy</a></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding-bottom: 8px;">
+                                                    <p style="margin: 0; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">&nbsp;</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding-bottom: 4px;">
+                                                    <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">Goody Technologies, Inc.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding-bottom: 4px;">
+                                                    <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">9450 SW Gemini Dr, PMB 88760</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #484848; text-align: center;">Beaverton, OR, 97008</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
     <script>
-        // Load Lottie animation with auto-reverse
+        // Load Lottie animation with auto-reverse (from JSON metadata)
         if (typeof lottie !== 'undefined') {
             fetch('https://cdn.lottielab.com/l/3rws1cUb1cBbej.json')
                 .then(response => response.json())
@@ -761,41 +491,204 @@
                 .catch(error => console.error('Error loading animation:', error));
         }
         
-        // Track current style (1 = style 1, 2 = style 2)
-        let currentEmailStyle = 1;
-        
-        // Function to toggle email step illustration styles
-        function toggleEmailStyle() {
-            // Toggle to the opposite style
-            currentEmailStyle = currentEmailStyle === 1 ? 2 : 1;
+        // Style switcher function
+        function switchStyle(styleNumber) {
+            const stepImages = document.querySelectorAll('.step-icon');
+            const stepContainers = document.querySelectorAll('.step-image-container');
+            const style1Tab = document.getElementById('style1-tab');
+            const style2Tab = document.getElementById('style2-tab');
             
-            const stepIcons = document.querySelectorAll('.step-icon');
-            const stepImageContainers = document.querySelectorAll('.step-image-container');
-
-            stepIcons.forEach(icon => {
-                if (currentEmailStyle === 1) {
-                    icon.src = icon.dataset.style1;
-                    icon.width = icon.dataset.style1Width;
-                    icon.height = icon.dataset.style1Height;
-                    icon.style.width = icon.dataset.style1Width + 'px';
-                    icon.style.height = icon.dataset.style1Height + 'px';
+            stepImages.forEach(img => {
+                const style1Src = img.getAttribute('data-style1');
+                const style2Src = img.getAttribute('data-style2');
+                const style1Width = img.getAttribute('data-style1-width');
+                const style1Height = img.getAttribute('data-style1-height');
+                const style2Width = img.getAttribute('data-style2-width');
+                const style2Height = img.getAttribute('data-style2-height');
+                
+                if (styleNumber === 1) {
+                    img.src = style1Src;
+                    img.style.width = style1Width + 'px';
+                    img.style.height = style1Height + 'px';
+                    style1Tab.style.backgroundColor = '#007aff';
+                    style1Tab.style.color = '#ffffff';
+                    style2Tab.style.backgroundColor = '#ffffff';
+                    style2Tab.style.color = '#007aff';
                 } else {
-                    icon.src = icon.dataset.style2;
-                    icon.width = icon.dataset.style2Width;
-                    icon.height = icon.dataset.style2Height;
-                    icon.style.width = icon.dataset.style2Width + 'px';
-                    icon.style.height = icon.dataset.style2Height + 'px';
+                    img.src = style2Src;
+                    img.style.width = style2Width + 'px';
+                    img.style.height = style2Height + 'px';
+                    style1Tab.style.backgroundColor = '#ffffff';
+                    style1Tab.style.color = '#007aff';
+                    style2Tab.style.backgroundColor = '#007aff';
+                    style2Tab.style.color = '#ffffff';
                 }
             });
-
-            stepImageContainers.forEach(container => {
-                if (currentEmailStyle === 1) {
+            
+            // Update container padding
+            stepContainers.forEach(container => {
+                if (styleNumber === 1) {
                     container.style.paddingBottom = '16px';
                 } else {
                     container.style.paddingBottom = '8px';
                 }
             });
         }
+        
+        // Load email content from email-design.html
+        function loadEmailContent() {
+            fetch('email-design.html')
+                .then(response => response.text())
+                .then(html => {
+                    // Parse the HTML
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    // Extract the email content (the wrapper table and everything inside body)
+                    const emailBody = doc.querySelector('body');
+                    if (emailBody) {
+                        // Remove back button and style switcher tabs (not needed in Gmail mockup)
+                        const backButton = emailBody.querySelector('.back-button');
+                        const styleSwitcher = emailBody.querySelector('[style*="position: fixed"][style*="bottom: 20px"]');
+                        if (backButton) backButton.remove();
+                        if (styleSwitcher) styleSwitcher.remove();
+                        
+                        // Get the wrapper table that contains the email
+                        const wrapperTable = emailBody.querySelector('table[role="presentation"]');
+                        if (wrapperTable) {
+                            // Remove the background color from wrapper table (Gmail mockup has its own background)
+                            wrapperTable.style.backgroundColor = 'transparent';
+                            
+                            const container = document.getElementById('email-content-container');
+                            if (container) {
+                                // Clear and add the email content
+                                container.innerHTML = '';
+                                container.appendChild(wrapperTable.cloneNode(true));
+                                
+                                // Re-initialize scripts (Lottie, style switcher)
+                                if (typeof lottie !== 'undefined') {
+                                    const lottieContainer = container.querySelector('#lottie-animation');
+                                    if (lottieContainer) {
+                                        fetch('https://cdn.lottielab.com/l/3rws1cUb1cBbej.json')
+                                            .then(response => response.json())
+                                            .then(data => {
+                                                const anim = lottie.loadAnimation({
+                                                    container: lottieContainer,
+                                                    renderer: 'svg',
+                                                    loop: false,
+                                                    autoplay: true,
+                                                    animationData: data
+                                                });
+                                                
+                                                anim.addEventListener('complete', function() {
+                                                    anim.setDirection(anim.playDirection * -1);
+                                                    anim.play();
+                                                });
+                                            })
+                                            .catch(error => console.error('Error loading animation:', error));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading email content:', error);
+                    document.getElementById('email-content-container').innerHTML = '<p style="padding: 20px; color: #5f6368;">Error loading email content</p>';
+                });
+        }
+        
+        // Load email content when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadEmailContent();
+            initEntranceTooltip();
+        });
+        
+        // Entrance Tooltip - shows once below the toggle button
+        function initEntranceTooltip() {
+            const storageKey = 'gmail-style-toggle-tooltip-shown';
+            
+            // Check if tooltip has been shown before
+            if (localStorage.getItem(storageKey) === 'true') {
+                return;
+            }
+            
+            // Wait for the button to be available (it's loaded dynamically)
+            let retryCount = 0;
+            const maxRetries = 200; // 20 seconds max
+            
+            const checkForButton = () => {
+                retryCount++;
+                
+                // Find the first button with toggleEmailStyle onclick
+                const buttons = document.querySelectorAll('button.gmail-icon-button[onclick*="toggleEmailStyle"]');
+                const button = buttons[0]; // Get the first one (at index 0 as per user's request)
+                
+                if (button) {
+                    // Create tooltip element
+                    const tooltip = document.createElement('div');
+                    tooltip.className = 'entrance-tooltip';
+                    tooltip.innerHTML = `
+                        <div class="entrance-tooltip-content">
+                            Click to switch between icon and illustrations for Steps section
+                        </div>
+                        <div class="entrance-tooltip-arrow"></div>
+                    `;
+                    
+                    // Function to update tooltip position
+                    const updatePosition = () => {
+                        const rect = button.getBoundingClientRect();
+                        tooltip.style.top = (rect.bottom + 8) + 'px';
+                        tooltip.style.left = (rect.left + rect.width / 2) + 'px';
+                        tooltip.style.transform = 'translateX(-50%)';
+                    };
+                    
+                    // Initially hide tooltip
+                    tooltip.style.display = 'none';
+                    document.body.appendChild(tooltip);
+                    
+                    // Show tooltip after a short delay
+                    setTimeout(() => {
+                        updatePosition();
+                        tooltip.style.display = 'block';
+                        // Mark as shown
+                        localStorage.setItem(storageKey, 'true');
+                    }, 500);
+                    
+                    // Update position on scroll/resize
+                    const handleResize = () => updatePosition();
+                    const handleScroll = () => updatePosition();
+                    window.addEventListener('resize', handleResize);
+                    window.addEventListener('scroll', handleScroll, true);
+                    
+                    // Hide tooltip after 5 seconds or when button is clicked
+                    const hideTimeout = setTimeout(() => {
+                        tooltip.style.display = 'none';
+                        window.removeEventListener('resize', handleResize);
+                        window.removeEventListener('scroll', handleScroll, true);
+                    }, 5000);
+                    
+                    const handleClick = () => {
+                        tooltip.style.display = 'none';
+                        clearTimeout(hideTimeout);
+                        window.removeEventListener('resize', handleResize);
+                        window.removeEventListener('scroll', handleScroll, true);
+                        button.removeEventListener('click', handleClick);
+                    };
+                    
+                    button.addEventListener('click', handleClick);
+                } else {
+                    // Retry if button not found
+                    if (retryCount < maxRetries) {
+                        setTimeout(checkForButton, 100);
+                    }
+                }
+            };
+            
+            // Start checking after a short delay
+            setTimeout(checkForButton, 100);
+        }
     </script>
 </body>
 </html>
+
