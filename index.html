@@ -99,13 +99,6 @@
             flex-shrink: 0;
         }
         
-        .gmail-logo .gmail-m {
-            background: linear-gradient(to bottom, #ea4335 0%, #ea4335 33%, #4285f4 33%, #4285f4 66%, #34a853 66%, #34a853 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 500;
-        }
-        
         .gmail-search {
             flex: 1;
             max-width: 720px;
@@ -286,10 +279,22 @@
         .gmail-email-meta {
             display: flex;
             align-items: center;
-            gap: 16px;
+            justify-content: space-between;
             font-size: 14px;
             color: #5f6368;
             font-family: 'Google Sans Flex', 'Google Sans', Roboto, Arial, sans-serif;
+        }
+        
+        .gmail-email-meta-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .gmail-email-meta-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .gmail-email-body {
@@ -328,7 +333,7 @@
                 </svg>
             </div>
             <div class="gmail-logo">
-                <span class="gmail-m">M</span>
+                <img src="images/gmail logo.svg" alt="Gmail" style="height: 28px; width: auto; display: block;">
                 <span>Gmail</span>
             </div>
         </div>
@@ -461,11 +466,15 @@
             <div class="gmail-email-info">
                 <div class="gmail-email-subject">Kate sent you a gift</div>
                 <div class="gmail-email-meta">
-                    <span style="font-weight: 500; color: #202124;">Kate via Goody</span>
-                    <span>&lt;gifts@notify.ongoody.com&gt;</span>
-                    <span>to me</span>
-                    <span>•</span>
-                    <span>Tue, Dec 12, 9:37 PM</span>
+                    <div class="gmail-email-meta-left">
+                        <span style="font-weight: 500; color: #202124;">Kate via Goody</span>
+                        <span>&lt;gifts@notify.ongoody.com&gt;</span>
+                    </div>
+                    <div class="gmail-email-meta-right">
+                        <span>to me</span>
+                        <span>•</span>
+                        <span>Tue, Dec 12, 9:37 PM</span>
+                    </div>
                 </div>
             </div>
             
