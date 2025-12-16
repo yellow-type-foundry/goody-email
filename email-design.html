@@ -239,10 +239,16 @@
                     <!-- Main container: 800px -->
                     <table role="presentation" class="email-container" cellspacing="0" cellpadding="0" border="0" width="800" style="max-width: 800px; width: 100%; background-color: #ffffff; border: 1px solid #dde2e9; position: relative; border-radius: 8px; overflow: hidden; padding-bottom: 60px; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.05), 0px 8px 24px -4px rgba(0,0,0,0.05), 0px 8px 32px -8px rgba(0,0,0,0.05);">
                     <!-- Animation Container + Hero Section -->
+                    <!-- Animation Container (Full Width, No Padding) -->
                     <tr>
-                        <td align="center" style="padding: 0 60px 60px 60px; background-color: #ffffff; position: relative;">
+                        <td align="center" style="padding: 0; background-color: #ffffff; position: relative;">
                             <img src="/images/Logo.svg" alt="Goody" class="header-logo" style="display: none; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 151px; height: 44px; z-index: 10;">
-                            <div id="lottie-animation" style="width: 100%; max-width: 100%; margin: 0 auto; background-color: #ffffff; text-align: center; padding-bottom: 20px;"></div>
+                            <div id="lottie-animation" style="width: 100%; max-width: 100%; margin: 0; background-color: #ffffff; text-align: center; padding: 0;"></div>
+                        </td>
+                    </tr>
+                    <!-- Hero Section (With Padding) -->
+                    <tr>
+                        <td align="center" style="padding: 32px 60px 48px 60px; background-color: #ffffff; display: flex; flex-direction: column;">
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding-bottom: 24px;">
@@ -507,8 +513,9 @@
                     
                     <!-- Footer -->
                     <tr>
-                        <td align="center" class="footer-container" style="padding: 60px 60px 0 60px; background-color: #ffffff; width: 100%;">
-                            <div style="display: flex; flex-direction: column; width: 100%; max-width: 800px; gap: 28px;">
+                        <td align="center" class="footer-container" style="padding: 0; background-color: #ffffff; width: 100%; box-sizing: border-box;">
+                            <!-- Footer Style 1 -->
+                            <div class="footer-style-1" style="display: flex; flex-direction: column; width: 100%; gap: 28px; padding: 60px 60px 0 60px; box-sizing: border-box;">
                                 <!-- Purple Box with Logo and App Store Rating -->
                                 <div>
                                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="footer-purple-box" style="width: 100%; background-color: rgba(247, 245, 255, 1); border-radius: 16px; padding: 20px; height: fit-content; border-image: none; border-width: 0px; border-style: none; border-color: rgba(0, 0, 0, 0);">
@@ -621,6 +628,92 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-- Footer Style 2 -->
+                            <div class="footer-style-2" style="display: none; width: 100%; box-sizing: border-box; padding-top: 60px;">
+                                <!-- Purple Box with Logo and App Store Rating (Horizontal Layout) -->
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: rgba(247, 245, 255, 1); width: 100%;">
+                                    <tr>
+                                        <td style="padding: 12px 60px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                <tr>
+                                                    <td align="left" valign="middle" style="transform: translateY(-4px);">
+                                                        <img src="/images/Given%20on%20Goody%202.gif" alt="Given on Goody" width="172" height="28" style="display: block; height: auto; width: 172px;">
+                                                    </td>
+                                                    <td align="right" valign="middle">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="right">
+                                                            <tr>
+                                                                <td align="right" valign="middle" style="padding-right: 8px; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #484848; white-space: nowrap;">
+                                                                    <p style="margin: 0; display: inline-block; vertical-align: middle;">38K ratings in the App Store</p>
+                                                                </td>
+                                                                <td align="left" valign="middle">
+                                                                    <img src="/images/Filled.png" alt="★" width="16" height="16" style="display: inline-block; width: 16px; height: 16px; vertical-align: middle;">
+                                                                    <img src="/images/Filled.png" alt="★" width="16" height="16" style="display: inline-block; width: 16px; height: 16px; vertical-align: middle;">
+                                                                    <img src="/images/Filled.png" alt="★" width="16" height="16" style="display: inline-block; width: 16px; height: 16px; vertical-align: middle;">
+                                                                    <img src="/images/Filled.png" alt="★" width="16" height="16" style="display: inline-block; width: 16px; height: 16px; vertical-align: middle;">
+                                                                    <img src="/images/Unfilled.png" alt="☆" width="16" height="16" style="display: inline-block; width: 16px; height: 16px; vertical-align: middle;">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <!-- Footer Content Container -->
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; width: 100%;">
+                                    <tr>
+                                        <td style="padding: 20px 60px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                <!-- Company Info and Certification Row -->
+                                                <tr>
+                                                    <td align="left" valign="top" width="210" style="width: 210px;">
+                                                        <!-- Company Info -->
+                                                        <p style="margin: 0 0 8px 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #484848; text-align: left;">
+                                                            Goody Technologies, Inc.<br>
+                                                            9450 SW Gemini Dr, PMB 88760<br>
+                                                            Beaverton, OR, 97008
+                                                        </p>
+                                                        <!-- Links Container (Horizontal) -->
+                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #713df5;">
+                                                            <a href="#" style="color: #713df5; text-decoration: underline;">Terms of Use</a>
+                                                            <span style="color: #713df5;">&nbsp;&nbsp;</span>
+                                                            <a href="#" style="color: #713df5; text-decoration: underline;">Privacy Policy</a>
+                                                            <span style="color: #713df5;">&nbsp;&nbsp;</span>
+                                                            <a href="https://goody.com/unsubscribe?token=xyz789abc" style="color: #713df5; text-decoration: underline;">Unsubscribe</a>
+                                                        </p>
+                                                    </td>
+                                                    <td align="right" valign="top" width="71" style="width: 71px; padding-left: 20px;">
+                                                        <!-- Certification Image (Smaller) -->
+                                                        <img src="/images/678952aa73cadc29cc9872292b1e9986c0bd7530.png" alt="AICPA SOC" width="71" height="70" style="display: block; height: 70px; width: 71px; max-width: 100%;">
+                                                    </td>
+                                                </tr>
+                                                <!-- Divider Line -->
+                                                <tr>
+                                                    <td colspan="2" style="padding-top: 12px; padding-bottom: 12px;">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                            <tr>
+                                                                <td style="border-top: 1px solid #dde2e9; height: 1px; line-height: 1px; font-size: 1px;">&nbsp;</td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <!-- Footer Bottom Row -->
+                                                <tr>
+                                                    <td align="left" valign="middle" style="font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #484848;">
+                                                        <p style="margin: 0; white-space: nowrap;">kate@ongoody.com is using Goody to send you a gift.</p>
+                                                    </td>
+                                                    <td align="right" valign="middle" width="158" style="width: 158px; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #484848;">
+                                                        <p style="margin: 0; text-align: right;">© 2025 Goody Technologies, Inc.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -696,9 +789,29 @@
             switchFooterStyle(newStyle);
         }
         
-        // Footer style switcher function (placeholder - will be implemented later)
+        // Footer style switcher function
         function switchFooterStyle(styleNumber) {
-            // TODO: Implement footer style switching logic
+            const footerStyle1 = document.querySelector('.footer-style-1');
+            const footerStyle2 = document.querySelector('.footer-style-2');
+            
+            if (styleNumber === 1) {
+                // Show Style 1, hide Style 2
+                if (footerStyle1) {
+                    footerStyle1.style.display = 'flex';
+                }
+                if (footerStyle2) {
+                    footerStyle2.style.display = 'none';
+                }
+            } else if (styleNumber === 2 || styleNumber === 3) {
+                // Show Style 2, hide Style 1 (Style 3 shows Style 2 for now)
+                if (footerStyle1) {
+                    footerStyle1.style.display = 'none';
+                }
+                if (footerStyle2) {
+                    footerStyle2.style.display = 'block';
+                }
+            }
+            
             updateFooterDisplay(styleNumber);
         }
         
