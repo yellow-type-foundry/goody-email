@@ -281,7 +281,13 @@
                                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
                                         <td align="center" style="padding-bottom: 40px;">
-                                            <h2 class="section-heading" style="margin: 0; font-family: 'Reckless Neue TRIAL', Georgia, serif; font-size: 48px; font-weight: 250; line-height: 48px; color: #000000; text-align: center; letter-spacing: -1px; max-width: 501px;"><span style="color: #713df5;">First time</span> receiving a gift on Goody?</h2>
+                                            <h2 class="section-heading" style="margin: 0; font-family: 'Reckless Neue TRIAL', Georgia, serif; font-size: 48px; font-weight: 250; line-height: 48px; color: #000000; text-align: center; letter-spacing: -1px; max-width: 501px; position: relative;">
+                                                <span style="color: #713df5; position: relative; display: inline-block;">
+                                                    First time
+                                                    <img src="/images/brush.svg" alt="" class="brush-image" style="display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 1px; height: auto; max-width: 100%;">
+                                                </span>
+                                                <span> receiving a gift on Goody?</span>
+                                            </h2>
                                         </td>
                                     </tr>
                                     
@@ -373,7 +379,7 @@
                                         </td>
                                     </tr>
                                     <tr class="style3-divider" style="display: none;">
-                                        <td align="center" style="padding: 0 60px; height: 1px; width: 100%;">
+                                        <td align="center" style="padding: 0 80px; height: 1px; width: 100%;">
                                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; margin: 0 auto;">
                                                 <tr>
                                                     <td style="border-top: 1px solid #dde2e9; height: 1px; line-height: 1px; font-size: 1px;">&nbsp;</td>
@@ -399,7 +405,7 @@
                                         </td>
                                     </tr>
                                     <tr class="style3-divider" style="display: none;">
-                                        <td align="center" style="padding: 0 60px; height: 1px; width: 100%;">
+                                        <td align="center" style="padding: 0 80px; height: 1px; width: 100%;">
                                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; margin: 0 auto;">
                                                 <tr>
                                                     <td style="border-top: 1px solid #dde2e9; height: 1px; line-height: 1px; font-size: 1px;">&nbsp;</td>
@@ -661,11 +667,18 @@
             // Update layout for style 3 (horizontal)
             const style3Steps = document.querySelectorAll('.style3-steps');
             const style3Dividers = document.querySelectorAll('.style3-divider');
+            const brushImage = document.querySelector('.brush-image');
+            const firstTimeSpan = sectionHeading ? sectionHeading.querySelector('span[style*="position: relative"]') : null;
             
             if (styleNumber === 3) {
                 // Change heading to have purple "First time"
-                if (sectionHeading) {
-                    sectionHeading.innerHTML = '<span style="color: #713df5;">First time</span> receiving a gift on Goody?';
+                if (firstTimeSpan) {
+                    firstTimeSpan.style.color = '#713df5';
+                }
+                
+                // Show brush image
+                if (brushImage) {
+                    brushImage.style.display = 'block';
                 }
                 
                 // Hide regular step rows
@@ -682,8 +695,13 @@
                 });
             } else {
                 // Reset to vertical layout for styles 1 and 2
-                if (sectionHeading) {
-                    sectionHeading.innerHTML = 'First time receiving a gift on Goody?';
+                if (firstTimeSpan) {
+                    firstTimeSpan.style.color = '#000000';
+                }
+                
+                // Hide brush image
+                if (brushImage) {
+                    brushImage.style.display = 'none';
                 }
                 
                 // Show regular step rows
