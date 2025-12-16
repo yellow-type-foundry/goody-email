@@ -284,7 +284,7 @@
                                             <h2 class="section-heading" style="margin: 0; font-family: 'Reckless Neue TRIAL', Georgia, serif; font-size: 48px; font-weight: 250; line-height: 48px; color: #000000; text-align: center; letter-spacing: -1px; max-width: 501px; position: relative;">
                                                 <span class="first-time-span" style="color: #000000; position: relative; display: inline-block;">
                                                     First time
-                                                    <img src="images/brush.svg" alt="" class="brush-image" style="display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 1px; height: auto; max-width: 100%;">
+                                                    <img src="/images/brush.svg" alt="" class="brush-image" style="display: block; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 1px; height: auto; max-width: 100%;">
                                                 </span>
                                                 <span> receiving a gift on Goody?</span>
                                             </h2>
@@ -537,25 +537,25 @@
                                     <div style="display: flex; width: 100%; justify-content: flex-start; align-items: center;">
                                         <div class="footer-content-left" style="display: flex; flex-direction: column; width: 60%; vertical-align: top; padding-right: 20px; box-sizing: border-box; gap: 6px;">
                                             <div style="padding-bottom: 8px;">
-                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 9px; line-height: 12.6px; color: #484848; text-align: left;">
+                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #484848; text-align: left;">
                                                     Goody Technologies, Inc.<br>
                                                     9450 SW Gemini Dr, PMB 88760<br>
                                                     Beaverton, OR, 97008
                                                 </p>
                                             </div>
                                             <div style="padding-bottom: 8px;">
-                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 9px; line-height: 12.6px; color: #484848; text-align: left;">
+                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #484848; text-align: left;">
                                                     {{customer.email}} is using Goody to send you a gift.<br>
                                                     To opt out of all gifts, <a href="https://goody.com/unsubscribe?token=xyz789abc" style="color: #713df5; text-decoration: underline;">click here to unsubscribe.</a>
                                                 </p>
                                             </div>
                                             <div style="padding-bottom: 8px;">
-                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 9px; line-height: 12.6px; color: #484848; text-align: left;">
+                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #484848; text-align: left;">
                                                     Goody <a href="#" style="color: #713df5; text-decoration: underline;">Terms of Use</a> and <a href="#" style="color: #713df5; text-decoration: underline;">Privacy Policy</a>
                                                 </p>
                                             </div>
                                             <div>
-                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 9px; line-height: 12.6px; color: #484848; text-align: left;">
+                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #484848; text-align: left;">
                                                     © 2025 Goody Technologies, Inc.
                                                 </p>
                                             </div>
@@ -718,6 +718,17 @@
                 });
             }
         }
+        
+        // Initialize on page load - hide brush for default Style 1
+        document.addEventListener('DOMContentLoaded', function() {
+            const brushImage = document.querySelector('.brush-image');
+            const firstTimeSpan = document.querySelector('.first-time-span');
+            if (brushImage && firstTimeSpan) {
+                // Style 1 is default, so hide brush and set text to black
+                brushImage.style.display = 'none';
+                firstTimeSpan.style.color = '#000000';
+            }
+        });
     </script>
 </body>
 </html>
