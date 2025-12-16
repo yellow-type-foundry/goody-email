@@ -282,9 +282,9 @@
                                     <tr>
                                         <td align="center" style="padding-bottom: 40px;">
                                             <h2 class="section-heading" style="margin: 0; font-family: 'Reckless Neue TRIAL', Georgia, serif; font-size: 48px; font-weight: 250; line-height: 48px; color: #000000; text-align: center; letter-spacing: -1px; max-width: 501px; position: relative;">
-                                                <span style="color: #713df5; position: relative; display: inline-block;">
+                                                <span class="first-time-span" style="color: #000000; position: relative; display: inline-block;">
                                                     First time
-                                                    <img src="/images/brush.svg" alt="" class="brush-image" style="display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 1px; height: auto; max-width: 100%;">
+                                                    <img src="images/brush.svg" alt="" class="brush-image" style="display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 1px; height: auto; max-width: 100%;">
                                                 </span>
                                                 <span> receiving a gift on Goody?</span>
                                             </h2>
@@ -366,7 +366,7 @@
                                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; margin: 0 auto;">
                                                 <tr style="display: flex; justify-content: center;">
                                                     <td align="center" valign="top" style="width: 50%; padding-right: 30px; vertical-align: top; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
-                                                        <p style="margin: 0 0 5px 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 22.5px; color: #713df5; text-align: center;">STEP 1</p>
+                                                        <p style="margin: 0 0 5px 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 22.5px; color: #713df5; text-align: left; width: 100%;">STEP 1</p>
                                                         <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 150%; color: #000000; text-align: left; width: 300px;">Click 'Select My Gift' to pick your favorite gift from the options that Kate sent you.</p>
                                                     </td>
                                                     <td align="right" valign="top" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: flex-start;">
@@ -392,7 +392,7 @@
                                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; margin: 0 auto;">
                                                 <tr style="display: flex; justify-content: center;">
                                                     <td align="center" valign="top" style="width: 50%; padding-right: 30px; vertical-align: top; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
-                                                        <p style="margin: 0 0 5px 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 22.5px; color: #713df5; text-align: center;">STEP 2</p>
+                                                        <p style="margin: 0 0 5px 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 22.5px; color: #713df5; text-align: left; width: 100%;">STEP 2</p>
                                                         <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 150%; color: #000000; text-align: left; width: 257px;">Enter the address you'd like us to deliver your gift to.</p>
                                                     </td>
                                                     <td align="right" valign="top" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: flex-start;">
@@ -418,7 +418,7 @@
                                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; margin: 0 auto;">
                                                 <tr style="display: flex; justify-content: center;">
                                                     <td align="center" valign="top" style="width: 50%; padding-right: 30px; vertical-align: top; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
-                                                        <p style="margin: 0 0 5px 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 22.5px; color: #713df5; text-align: center;">STEP 3 (Optional)</p>
+                                                        <p style="margin: 0 0 5px 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 22.5px; color: #713df5; text-align: left; width: 100%;">STEP 3 (Optional)</p>
                                                         <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 150%; color: #000000; text-align: left; width: 257px;">Write Kate a thank you note to let them know you appreciate their gift.</p>
                                                     </td>
                                                     <td align="right" valign="top" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: flex-start;">
@@ -668,7 +668,7 @@
             const style3Steps = document.querySelectorAll('.style3-steps');
             const style3Dividers = document.querySelectorAll('.style3-divider');
             const brushImage = document.querySelector('.brush-image');
-            const firstTimeSpan = sectionHeading ? sectionHeading.querySelector('span[style*="position: relative"]') : null;
+            const firstTimeSpan = document.querySelector('.first-time-span');
             
             if (styleNumber === 3) {
                 // Change heading to have purple "First time"
