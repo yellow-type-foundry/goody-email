@@ -310,11 +310,30 @@
             margin: 0 auto;
             max-width: 800px;
             width: 100%;
+            /* Ensure email content styles are not overridden */
+            font-family: initial;
+            color: initial;
         }
         
-        /* Email content styles */
+        /* Preserve all inline styles from email-design.html */
+        .gmail-email-content [style] {
+            /* Inline styles should take precedence */
+        }
+        
+        /* Email content styles - ensure email styles are preserved and not overridden */
+        .gmail-email-content {
+            /* Reset any inherited styles that might affect email content */
+            font-family: initial;
+            color: initial;
+        }
+        
         .gmail-email-content table {
             margin: 0 auto;
+        }
+        
+        /* Ensure all inline styles from email-design.html are preserved */
+        .gmail-email-content * {
+            box-sizing: border-box;
         }
         
         /* Hide the style switcher tabs in Gmail mockup */
@@ -543,540 +562,100 @@
             </div>
             
             <div class="gmail-email-body">
-                <div class="gmail-email-content">
-                    <!-- Embedded Email Content -->
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff;">
-                        <tr>
-                            <td align="center" style="padding: 0;">
-                                <!-- Main container: scales to fit -->
-                                <table role="presentation" class="email-container" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; width: 100%; margin: 0 auto; background-color: #ffffff; position: relative; overflow: hidden; padding-bottom: 60px;">
-                                    <!-- Animation Container with Logo -->
-                                    <tr>
-                                        <td align="center" style="padding: 0 0 20px 0; background-color: #ffffff; position: relative;">
-                                            <img src="/images/Logo.svg" alt="Goody" class="header-logo" style="display: none; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 151px; height: 44px; z-index: 10;">
-                                            <div id="lottie-animation" style="width: 100%; max-width: 100%; margin: 0 auto; background-color: #ffffff; text-align: center;"></div>
-                                        </td>
-                                    </tr>
-                                    
-                                    <!-- Hero Section -->
-                                    <tr>
-                                        <td align="center" style="padding: 0 60px 60px 60px; background-color: #ffffff;">
-                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                <tr>
-                                                    <td align="center" style="padding-bottom: 24px;">
-                                                        <h1 class="hero-heading" style="margin: 0; font-family: 'Reckless Neue TRIAL', Georgia, serif; font-size: 56px; font-weight: 250; line-height: 50px; color: #000000; text-align: center; letter-spacing: -1px;">Kate sent you a gift</h1>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="center" style="padding-bottom: 24px;">
-                                                        <p class="hero-text" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: center; max-width: 629px;">Hi Bao, Goody is a gifting service that Kate is using to send you a gift of your choice. Simply follow the instructions below to claim it:</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="center">
-                                                        <!--[if mso]>
-                                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://goody.com/claim?token=abc123xyz" style="height:56px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#5a3dff">
-                                                        <w:anchorlock/>
-                                                        <center style="color:#ffffff;font-family:'Goody Sans', Helvetica, Arial, sans-serif;font-size:20px;font-weight:bold;">Accept my gift</center>
-                                                        </v:roundrect>
-                                                        <![endif]-->
-                                                        <!--[if !mso]><!-- -->
-                                                        <a href="https://goody.com/claim?token=abc123xyz" style="display: inline-block; background: linear-gradient(to bottom, #5a3dff 0%, #a799ff 100%); background-color: #5a3dff; border-radius: 34px; color: #ffffff; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 1.2; text-decoration: none; text-align: center; padding: 18px 28px; box-shadow: 0px 1px 8px 0px inset rgba(255,255,255,0.75); vertical-align: middle;">Accept my gift</a>
-                                                        <!--<![endif]-->
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    
-                                    <!-- Message Card Section -->
-                                    <tr>
-                                        <td align="center" style="padding: 20px 60px 20px 60px; background-color: #ffffff; overflow: visible; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="629" class="message-card" style="width: 100%; max-width: 629px; background-color: #ffffff; border: 1px solid #dde2e9; border-radius: 24px; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.03), 0px 16px 48px -4px rgba(0,0,0,0.05), 0px 20px 80px -8px rgba(0,0,0,0.02); overflow: visible;">
-                                                <tr>
-                                                    <td style="padding: 24px; width: 100%;">
-                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                            <tr>
-                                                                <td style="padding: 0 12px 12px 12px;">
-                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                                        <tr>
-                                                                            <td style="padding-right: 24px; vertical-align: middle;" width="389">
-                                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                                                    <tr>
-                                                                                        <td style="padding-bottom: 8px;">
-                                                                                            <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 150%; color: #7f53fd;">From Kate</p>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td>
-                                                                                            <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 25.2px; color: #000000;">"Bao - We wanted to take a moment to thank you for your continued support. We truly appreciate your partnership and dedication."</p>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                            <td style="vertical-align: top;" width="144" align="right">
-                                                                                <div style="position: relative; width: 144px; height: 160px;">
-                                                                                    <!-- Back Card (overlay, rotated 8deg) -->
-                                                                                    <div style="position: absolute; left: 20.35px; top: 0.71px; width: 123.307px; height: 159.053px; display: flex; align-items: center; justify-content: center;">
-                                                                                        <div style="transform: rotate(8deg);">
-                                                                                            <div style="width: 104px; height: 146px; position: relative;">
-                                                                                                <div style="position: absolute; inset: -4.79% -10.58% -10.27% -10.58%;">
-                                                                                                    <img src="/images/note-card-overlay.svg" alt="" style="width: 100%; height: 100%; display: block; max-width: none;">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <!-- Front Card (with border, rotated 352deg) -->
-                                                                                    <div style="position: absolute; left: 0; top: 0.24px; width: 123.307px; height: 159.053px; display: flex; align-items: center; justify-content: center;">
-                                                                                        <div style="transform: rotate(352deg);">
-                                                                                            <div style="width: 104px; height: 146px; border: 3px solid #ffffff; border-radius: 4px; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.05), 0px 8px 24px -4px rgba(0,0,0,0.05), 0px 8px 32px -8px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
-                                                                                                <img src="/images/be65ff7a4d5590985ec07afece74613eb557b0d1.png" alt="Thank you note card" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; pointer-events: none; border-radius: 4px; display: block; max-width: none;">
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    
-                                    <!-- Instructions Section -->
-                                    <tr>
-                                        <td align="center" style="padding: 60px 0 0 0; background-color: transparent;">
-                                            <div style="width: 100%; max-width: 100%;">
-                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                    <tr>
-                                                        <td align="center" style="padding-bottom: 60px;">
-                                                            <h2 class="section-heading" style="margin: 0; font-family: 'Reckless Neue TRIAL', Georgia, serif; font-size: 48px; font-weight: 250; line-height: 105%; color: #000000; text-align: center; letter-spacing: -1px; max-width: 501px; position: relative;">
-                                                                <span class="first-time-span" style="color: #000000; position: relative; display: inline-block;">
-                                                                    First time
-                                                                    <img src="/images/brush.svg" alt="" class="brush-image" width="189" height="10" style="display: block; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 1px; width: 189px; height: auto; max-width: 100%;">
-                                                                </span>
-                                                                <span> receiving a gift on Goody ?</span>
-                                                            </h2>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <!-- Step 1 -->
-                                                    <tr class="step-row" data-step="1">
-                                                        <td align="center" style="padding-bottom: 60px;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="412" style="max-width: 100%;" class="step-container">
-                                                                <tr>
-                                                                    <td align="center" class="step-image-container" style="padding-bottom: 16px;">
-                                                                        <img src="/images/Step%2001.png" alt="Step 1 illustration" class="step-icon step-1-img" data-style1="/images/Step%2001.png" data-style2="/images/Instruction%20Step%20Header01.png" data-style3="/images/Step%201-Illustration.png" data-style1-width="80" data-style1-height="80" data-style2-width="265" data-style2-height="142" data-style3-width="265" data-style3-height="210" style="display: block; width: 80px; height: 80px; margin: 0 auto;">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 4px;">
-                                                                        <p class="step-number" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; line-height: 27px; color: #713df5; text-align: center;">STEP 1</p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center">
-                                                                        <p class="step-text" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: center; max-width: 318px;">Click 'Select My Gift' to pick your favorite gift from the options that Kate sent you.</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <!-- Step 2 -->
-                                                    <tr class="step-row" data-step="2">
-                                                        <td align="center" style="padding-bottom: 60px;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="412" style="max-width: 100%;" class="step-container">
-                                                                <tr>
-                                                                    <td align="center" class="step-image-container" style="padding-bottom: 16px;">
-                                                                        <img src="/images/Step%2002.png" alt="Step 2 illustration" class="step-icon step-2-img" data-style1="/images/Step%2002.png" data-style2="/images/Instruction%20Step%20Header02.png" data-style3="/images/Step%202-Illustration.png" data-style1-width="80" data-style1-height="80" data-style2-width="244" data-style2-height="142" data-style3-width="265" data-style3-height="210" style="display: block; width: 80px; height: 80px; margin: 0 auto;">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 4px;">
-                                                                        <p class="step-number" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; line-height: 27px; color: #713df5; text-align: center;">STEP 2</p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center">
-                                                                        <p class="step-text" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: center; max-width: 335px;">Enter the address you'd like us to deliver your gift to.</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <!-- Step 3 -->
-                                                    <tr class="step-row" data-step="3">
-                                                        <td align="center" style="padding-bottom: 32px;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="412" style="max-width: 100%;" class="step-container">
-                                                                <tr>
-                                                                    <td align="center" class="step-image-container" style="padding-bottom: 16px;">
-                                                                        <img src="/images/Step%2003.png" alt="Step 3 illustration" class="step-icon step-3-img" data-style1="/images/Step%2003.png" data-style2="/images/Instruction%20Step%20Header03.png" data-style3="/images/Step%203-Illustration.png" data-style1-width="80" data-style1-height="80" data-style2-width="201" data-style2-height="142" data-style3-width="265" data-style3-height="210" style="display: block; width: 80px; height: 80px; margin: 0 auto;">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 4px;">
-                                                                        <p class="step-number" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; line-height: 27px; color: #713df5; text-align: center;">STEP 3 (Optional)</p>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="center">
-                                                                        <p class="step-text" style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: center; max-width: 376px;">Write Kate a thank you note to let them know you appreciate their gift.</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <!-- Style 3 Horizontal Layout (hidden by default) -->
-                                                    <tr class="style3-steps" style="display: none;">
-                                                        <td align="center" style="padding: 32px 80px 32px 80px; width: 100%;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; margin: 0 auto;">
-                                                                <tr style="display: flex; justify-content: center;">
-                                                                    <td align="center" valign="top" style="width: 50%; padding-right: 30px; vertical-align: top; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
-                                                                        <p style="margin: 0 0 5px 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 22.5px; color: #713df5; text-align: left; width: 100%;">STEP 1</p>
-                                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 150%; color: #000000; text-align: left; width: 300px;">Click 'Select My Gift' to pick your favorite gift from the options that Kate sent you.</p>
-                                                                    </td>
-                                                                    <td align="right" valign="top" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: flex-start;">
-                                                                        <div style="background: linear-gradient(to bottom, #e4e0ff 0%, #f2f0ff 100%); border: 0.5px solid #dcd6ff; border-radius: 16px; padding: 0; width: 265px; height: 210px; overflow: hidden; margin-left: auto;">
-                                                                            <img src="/images/Step%201-Illustration.png" alt="Step 1" style="display: block; width: 265px; height: 210px; object-fit: contain;">
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="style3-divider" style="display: none;">
-                                                        <td align="center" style="padding: 0 80px; height: 1px; width: 100%;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; margin: 0 auto;">
-                                                                <tr>
-                                                                    <td style="border-top: 1px solid #dde2e9; height: 1px; line-height: 1px; font-size: 1px;">&nbsp;</td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="style3-steps" style="display: none;">
-                                                        <td align="center" style="padding: 32px 80px 32px 80px; width: 100%;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; margin: 0 auto;">
-                                                                <tr style="display: flex; justify-content: center;">
-                                                                    <td align="center" valign="top" style="width: 50%; padding-right: 30px; vertical-align: top; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
-                                                                        <p style="margin: 0 0 5px 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 22.5px; color: #713df5; text-align: left; width: 100%;">STEP 2</p>
-                                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 150%; color: #000000; text-align: left; width: 257px;">Enter the address you'd like us to deliver your gift to.</p>
-                                                                    </td>
-                                                                    <td align="right" valign="top" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: flex-start;">
-                                                                        <div style="background: linear-gradient(to bottom, #e4e0ff 0%, #f2f0ff 100%); border: 0.5px solid #dcd6ff; border-radius: 16px; padding: 0; width: 265px; height: 210px; overflow: hidden; margin-left: auto;">
-                                                                            <img src="/images/Step%202-Illustration.png" alt="Step 2" style="display: block; width: 265px; height: 210px; object-fit: contain;">
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="style3-divider" style="display: none;">
-                                                        <td align="center" style="padding: 0 80px; height: 1px; width: 100%;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; margin: 0 auto;">
-                                                                <tr>
-                                                                    <td style="border-top: 1px solid #dde2e9; height: 1px; line-height: 1px; font-size: 1px;">&nbsp;</td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="style3-steps" style="display: none;">
-                                                        <td align="center" style="padding: 32px 80px 32px 80px; width: 100%;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; margin: 0 auto;">
-                                                                <tr style="display: flex; justify-content: center;">
-                                                                    <td align="center" valign="top" style="width: 50%; padding-right: 30px; vertical-align: top; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
-                                                                        <p style="margin: 0 0 5px 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 22.5px; color: #713df5; text-align: left; width: 100%;">STEP 3 (Optional)</p>
-                                                                        <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 150%; color: #000000; text-align: left; width: 257px;">Write Kate a thank you note to let them know you appreciate their gift.</p>
-                                                                    </td>
-                                                                    <td align="right" valign="top" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: flex-start;">
-                                                                        <div style="background: linear-gradient(to bottom, #e4e0ff 0%, #f2f0ff 100%); border: 0.5px solid #dcd6ff; border-radius: 16px; padding: 0; width: 265px; height: 210px; overflow: hidden; margin-left: auto;">
-                                                                            <img src="/images/Step%203-Illustration.png" alt="Step 3" style="display: block; width: 265px; height: 210px; object-fit: contain;">
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <!-- Style 4 Layout (hidden by default) -->
-                                                    <tr class="style4-steps" style="display: none;">
-                                                        <td align="center" style="padding: 60px 80px 0px 80px; width: 100%;">
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; margin: 0 auto;">
-                                                                <!-- Step 1 Card -->
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 32px;">
-                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #fbfaf9; border: 0.5px solid #ebe5e0; border-radius: 16px; padding: 20px; height: 210px; position: relative; overflow: hidden;">
-                                                                            <tr>
-                                                                                <td valign="middle" style="width: 257px; vertical-align: middle;">
-                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                                                        <tr>
-                                                                                            <td style="padding-bottom: 5px;">
-                                                                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 22.5px; color: #ad9985; text-align: left;">STEP 1</p>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>
-                                                                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: left;">Click 'Select My Gift' to pick your favorite gift from the options that Kate sent you.</p>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    </table>
-                                                                                </td>
-                                                                                <td style="width: 389px; position: relative; vertical-align: middle;">
-                                                                                    <div style="position: absolute; left: 45px; top: 5px; width: 389px; height: 329px; overflow: hidden;">
-                                                                                        <img src="/images/2bed1012e1971364862f0e0f0880c8fed30740a0.png" alt="Step 1 illustration" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; pointer-events: none; display: block; max-width: none;">
-                                                                                    </div>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- Step 2 Card -->
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 32px;">
-                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #fbfaf9; border: 0.5px solid #ebe5e0; border-radius: 16px; padding: 20px; height: 210px; position: relative; overflow: hidden;">
-                                                                            <tr>
-                                                                                <td style="width: 389px; position: relative; vertical-align: middle;">
-                                                                                    <div style="position: absolute; left: -69.5px; top: 5px; width: 389px; height: 329px; overflow: hidden;">
-                                                                                        <img src="/images/02390a9508fe5f4168e420542d12da33c765b8e8.png" alt="Step 2 illustration" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; pointer-events: none; display: block; max-width: none;">
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td valign="middle" style="width: 257px; vertical-align: middle; text-align: right;">
-                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" align="right">
-                                                                                        <tr>
-                                                                                            <td align="right" style="padding-bottom: 5px;">
-                                                                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 22.5px; color: #ad9985; text-align: right;">STEP 2</p>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td align="right">
-                                                                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: right;">Enter the address you'd like us to deliver your gift to.</p>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    </table>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- Step 3 Card -->
-                                                                <tr>
-                                                                    <td align="center" style="padding-bottom: 0;">
-                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #fbfaf9; border: 0.5px solid #ebe5e0; border-radius: 16px; padding: 20px; height: 210px; position: relative; overflow: hidden;">
-                                                                            <tr>
-                                                                                <td valign="middle" style="width: 257px; vertical-align: middle;">
-                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                                                        <tr>
-                                                                                            <td style="padding-bottom: 5px;">
-                                                                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 22.5px; color: #ad9985; text-align: left;">STEP 3 (Optional)</p>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>
-                                                                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; color: #000000; text-align: left;">Write Kate a thank you note to let them know you appreciate their gift.</p>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    </table>
-                                                                                </td>
-                                                                                <td style="width: 389px; position: relative; vertical-align: middle;">
-                                                                                    <div style="position: absolute; left: 45px; top: 5px; width: 389px; height: 329px; overflow: hidden;">
-                                                                                        <img src="/images/8992215c54846759ceff54d847aa798209eafb4f.png" alt="Step 3 illustration" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; pointer-events: none; display: block; max-width: none;">
-                                                                                    </div>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- CTA Button -->
-                                                                <tr>
-                                                                    <td align="center" style="padding-top: 60px;">
-                                                                        <!--[if mso]>
-                                                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://goody.com/claim?token=abc123xyz" style="height:56px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#5a3dff">
-                                                                        <w:anchorlock/>
-                                                                        <center style="color:#ffffff;font-family:'Goody Sans', Helvetica, Arial, sans-serif;font-size:20px;font-weight:bold;">Accept my gift</center>
-                                                                        </v:roundrect>
-                                                                        <![endif]-->
-                                                                        <!--[if !mso]><!-- -->
-                                                                        <a href="https://goody.com/claim?token=abc123xyz" style="display: inline-block; background: linear-gradient(to bottom, #5a3dff 0%, #a799ff 100%); background-color: #5a3dff; border-radius: 34px; color: #ffffff; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 1.2; text-decoration: none; text-align: center; padding: 16px 28px 20px 28px; box-shadow: 0px 1px 8px 0px inset rgba(255,255,255,0.75);">Accept my gift</a>
-                                                                        <!--<![endif]-->
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <!-- Second CTA Button (hidden for Style 4) -->
-                                                    <tr class="cta-button-row">
-                                                        <td align="center" style="height: 80px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center;">
-                                                            <!--[if mso]>
-                                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://goody.com/claim?token=abc123xyz" style="height:56px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#5a3dff">
-                                                            <w:anchorlock/>
-                                                            <center style="color:#ffffff;font-family:'Goody Sans', Helvetica, Arial, sans-serif;font-size:20px;font-weight:bold;">Accept my gift</center>
-                                                            </v:roundrect>
-                                                            <![endif]-->
-                                                            <!--[if !mso]><!-- -->
-                                                            <a href="https://goody.com/claim?token=abc123xyz" style="display: inline-block; background: linear-gradient(to bottom, #5a3dff 0%, #a799ff 100%); background-color: #5a3dff; border-radius: 34px; color: #ffffff; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 1.2; text-decoration: none; text-align: center; padding: 18px 28px; box-shadow: 0px 1px 8px 0px inset rgba(255,255,255,0.75); vertical-align: middle;">Accept my gift</a>
-                                                            <!--<![endif]-->
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    
-                                    <!-- Footer -->
-                                    <tr>
-                                        <td align="center" class="footer-container" style="padding: 60px 60px 0 60px; background-color: #ffffff; width: 100%;">
-                                            <div style="display: flex; flex-direction: column; width: 100%; max-width: 800px; gap: 28px;">
-                                                <!-- Purple Box with Logo and App Store Rating -->
-                                                <div>
-                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="footer-purple-box" style="width: 100%; background-color: rgba(247, 245, 255, 1); border-radius: 16px; padding: 20px; height: fit-content; border-image: none; border-width: 0px; border-style: none; border-color: rgba(0, 0, 0, 0);">
-                                                        <tr>
-                                                            <td align="left" valign="middle" style="width: 50%; transform: translateY(-4px);">
-                                                                <img src="/images/Given%20on%20Goody%202.gif" alt="Given on Goody" width="172" height="28" style="display: block; height: auto; width: 172px;">
-                                                            </td>
-                                                            <td align="right" valign="middle" style="width: 50%;">
-                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="right">
-                                                                    <tr>
-                                                                        <td align="right" style="padding-right: 8px;">
-                                                                            <!-- 5 Stars - using PNG images -->
-                                                                            <img src="/images/Filled.png" alt="★" width="20" height="20" style="display: inline-block; width: 20px; height: 20px; vertical-align: middle;">
-                                                                            <img src="/images/Filled.png" alt="★" width="20" height="20" style="display: inline-block; width: 20px; height: 20px; vertical-align: middle;">
-                                                                            <img src="/images/Filled.png" alt="★" width="20" height="20" style="display: inline-block; width: 20px; height: 20px; vertical-align: middle;">
-                                                                            <img src="/images/Filled.png" alt="★" width="20" height="20" style="display: inline-block; width: 20px; height: 20px; vertical-align: middle;">
-                                                                            <img src="/images/Unfilled.png" alt="☆" width="20" height="20" style="display: inline-block; width: 20px; height: 20px; vertical-align: middle;">
-                                                                        </td>
-                                                                        <td align="left">
-                                                                            <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 16.8px; color: #525f7a; text-align: left; white-space: nowrap;">
-                                                                                <span>38K ratings in the </span>
-                                                                                <a href="https://apps.apple.com/app/goody" style="color: #713df5; text-decoration: underline;">App Store</a>
-                                                                            </p>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                
-                                                <!-- Trusted by Section -->
-                                                <div>
-                                                    <p style="margin: 0 0 12px 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 16.8px; color: #484848; text-align: left;">Trusted by</p>
-                                                    <!-- Brand Logos - Note: Replace with actual brand logo images when available -->
-                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                        <tr>
-                                                            <!-- Nike -->
-                                                            <td align="center" class="footer-brand-logos" width="76" style="padding: 0 4px; width: 76px;">
-                                                                <img src="/images/logos/Nike.svg" alt="Nike" width="60" height="18" style="display: block; height: auto; width: 60px; max-width: 100%; opacity: 0.7;">
-                                                            </td>
-                                                            <!-- Adidas -->
-                                                            <td align="center" class="footer-brand-logos" style="padding: 0 4px;">
-                                                                <img src="/images/logos/Adidas.svg" alt="Adidas" width="41" height="28" style="display: block; height: auto; width: 41px; max-width: 100%; opacity: 0.7;">
-                                                            </td>
-                                                            <!-- Columbia -->
-                                                            <td align="center" class="footer-brand-logos" width="110" style="padding: 0 4px; width: 110px;">
-                                                                <img src="/images/logos/Columbia.svg" alt="Columbia" width="89" height="16" style="display: block; height: auto; width: 89px; max-width: 100%; opacity: 0.7;">
-                                                            </td>
-                                                            <!-- The North Face -->
-                                                            <td align="center" class="footer-brand-logos" style="padding: 0 4px;">
-                                                                <img src="/images/logos/TNF.svg" alt="The North Face" width="49" height="23" style="display: block; height: auto; width: 49px; max-width: 100%; opacity: 0.7;">
-                                                            </td>
-                                                            <!-- Apple -->
-                                                            <td align="center" class="footer-brand-logos" style="padding: 0 4px;">
-                                                                <img src="/images/logos/Apple.svg" alt="Apple" width="60" height="27" style="display: block; height: 32px; width: 60px; max-width: 100%; opacity: 0.7;">
-                                                            </td>
-                                                            <!-- YETI -->
-                                                            <td align="center" class="footer-brand-logos" width="92" style="padding: 0 4px; width: 92px;">
-                                                                <img src="/images/logos/Yeti.svg" alt="YETI" width="63" height="18" style="display: block; height: auto; width: 63px; max-width: 100%; opacity: 0.7;">
-                                                            </td>
-                                                            <!-- Carhartt -->
-                                                            <td align="center" class="footer-brand-logos" width="110" style="padding: 0 4px; width: 110px;">
-                                                                <img src="/images/logos/carhartt.svg" alt="carhartt" width="114" height="17" style="display: block; height: auto; width: 114px; max-width: 100%; opacity: 0.7;">
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                
-                                                <!-- Divider Line -->
-                                                <div>
-                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                        <tr>
-                                                            <td style="border-top: 1px solid #dde2e9; height: 1px; line-height: 1px; font-size: 1px;">&nbsp;</td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                
-                                                <!-- Footer Content: Left Text, Right AICPA Badge -->
-                                                <div>
-                                                    <div style="display: flex; width: 100%; justify-content: flex-start; align-items: center;">
-                                                        <div class="footer-content-left" style="display: flex; flex-direction: column; width: 60%; vertical-align: top; padding-right: 20px; box-sizing: border-box; gap: 6px;">
-                                                            <div style="padding-bottom: 8px;">
-                                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #484848; text-align: left;">
-                                                                    Goody Technologies, Inc.<br>
-                                                                    9450 SW Gemini Dr, PMB 88760<br>
-                                                                    Beaverton, OR, 97008
-                                                                </p>
-                                                            </div>
-                                                            <div style="padding-bottom: 8px;">
-                                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #484848; text-align: left;">
-                                                                    kate@ongoody.com is using Goody to send you a gift.<br>
-                                                                    To opt out of all gifts, <a href="https://goody.com/unsubscribe?token=xyz789abc" style="color: #713df5; text-decoration: underline;">click here to unsubscribe.</a>
-                                                                </p>
-                                                            </div>
-                                                            <div style="padding-bottom: 8px;">
-                                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #484848; text-align: left;">
-                                                                    Goody <a href="#" style="color: #713df5; text-decoration: underline;">Terms of Use</a> and <a href="#" style="color: #713df5; text-decoration: underline;">Privacy Policy</a>
-                                                                </p>
-                                                            </div>
-                                                            <div>
-                                                                <p style="margin: 0; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; color: #484848; text-align: left;">
-                                                                    © 2025 Goody Technologies, Inc.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="footer-content-right" style="display: inline-block; width: 40%; vertical-align: top; text-align: right; box-sizing: border-box;">
-                                                            <img src="/images/678952aa73cadc29cc9872292b1e9986c0bd7530.png" alt="AICPA SOC" width="111" height="110" style="display: block; height: 110px; width: 111px; max-width: 100%; margin-left: auto;">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
+                <div class="gmail-email-content" id="email-content-container">
+                    <!-- Email content will be loaded dynamically from email-design.html -->
                 </div>
             </div>
         </div>
     </div>
     
     <script>
-        // Load Lottie animation with auto-reverse
-        if (typeof lottie !== 'undefined') {
-            fetch('https://cdn.lottielab.com/l/3rws1cUb1cBbej.json')
-                .then(response => response.json())
-                .then(data => {
-                    const anim = lottie.loadAnimation({
-                        container: document.getElementById('lottie-animation'),
-                        renderer: 'svg',
-                        loop: false,
-                        autoplay: true,
-                        animationData: data
-                    });
-                    
-                    // Enable auto-reverse: play forward, then reverse, then repeat
-                    anim.addEventListener('complete', function() {
-                        anim.setDirection(anim.playDirection * -1);
-                        anim.play();
-                    });
+        // Function to load email content from email-design.html
+        function loadEmailContent() {
+            fetch('email-design.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch email-design.html');
+                    }
+                    return response.text();
                 })
-                .catch(error => console.error('Error loading animation:', error));
+                .then(html => {
+                    // Create a temporary container to parse the HTML
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = html;
+                    
+                    // Find the email-container table (the main 800px email table)
+                    const emailContainer = tempDiv.querySelector('.email-container');
+                    if (!emailContainer) {
+                        console.error('Could not find .email-container in email-design.html');
+                        document.getElementById('email-content-container').innerHTML = 
+                            '<p style="padding: 20px; color: #666;">Error: Email content not found.</p>';
+                        return;
+                    }
+                    
+                    // Clone the entire email-container table with all its content
+                    const emailTable = emailContainer.cloneNode(true);
+                    
+                    // Inject the email content into the Gmail mockup
+                    const container = document.getElementById('email-content-container');
+                    if (!container) {
+                        console.error('Could not find email-content-container');
+                        return;
+                    }
+                    
+                    // Clear container first to avoid duplicates
+                    container.innerHTML = '';
+                    
+                    // Use innerHTML to set the table content directly (more reliable for email tables)
+                    container.innerHTML = emailTable.outerHTML;
+                    
+                    // Hide navigation controls in the injected content (they shouldn't be in the email-container, but just in case)
+                    const injectedBackButton = container.querySelector('.back-button');
+                    if (injectedBackButton) injectedBackButton.style.display = 'none';
+                    
+                    const injectedFooterNav = container.querySelectorAll('[id^="footer-"]');
+                    injectedFooterNav.forEach(el => el.style.display = 'none');
+                    
+                    const injectedStyleNav = container.querySelectorAll('[id^="style-"]');
+                    injectedStyleNav.forEach(el => el.style.display = 'none');
+                    
+                    // Re-initialize scripts (load animation, etc.)
+                    initializeEmailScripts();
+                })
+                .catch(error => {
+                    console.error('Error loading email content:', error);
+                    const container = document.getElementById('email-content-container');
+                    if (container) {
+                        container.innerHTML = 
+                            '<p style="padding: 20px; color: #666;">Error loading email content: ' + error.message + '. Please refresh the page.</p>';
+                    }
+                });
+        }
+        
+        // Initialize scripts from email-design.html
+        function initializeEmailScripts() {
+            // Load Lottie animation with auto-reverse (only if not already loaded)
+            const animationContainer = document.getElementById('lottie-animation');
+            if (animationContainer && typeof lottie !== 'undefined' && !animationContainer.hasChildNodes()) {
+                fetch('https://cdn.lottielab.com/l/3rws1cUb1cBbej.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const anim = lottie.loadAnimation({
+                            container: animationContainer,
+                            renderer: 'svg',
+                            loop: false,
+                            autoplay: true,
+                            animationData: data
+                        });
+                        
+                        // Enable auto-reverse: play forward, then reverse, then repeat
+                        anim.addEventListener('complete', function() {
+                            anim.setDirection(anim.playDirection * -1);
+                            anim.play();
+                        });
+                    })
+                    .catch(error => console.error('Error loading animation:', error));
+            }
         }
         
         // Track current style (1 = style 1, 2 = style 2, 3 = style 3, 4 = style 4)
@@ -1242,7 +821,12 @@
             }
         }
         
-        // Initialize on page load - hide brush for default Style 1
+        // Load email content when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadEmailContent();
+        });
+        
+        // Initialize email scripts after content is loaded (for style switching in Gmail)
         document.addEventListener('DOMContentLoaded', function() {
             const brushImage = document.querySelector('.brush-image');
             const firstTimeSpan = document.querySelector('.first-time-span');
@@ -1251,7 +835,6 @@
                 brushImage.style.display = 'none';
                 firstTimeSpan.style.color = '#000000';
             }
-            
         });
     </script>
 </body>
