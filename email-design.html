@@ -44,6 +44,30 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.16);
         }
         
+        /* Instructions Section Navigation styles */
+        #style-prev-btn:hover, #style-next-btn:hover {
+            border-color: #713df5;
+            background-color: #f7f5ff;
+            box-shadow: 0px 1px 3px 0px rgba(113, 61, 245, 0.1);
+        }
+        
+        #style-prev-btn:active, #style-next-btn:active {
+            background-color: #e4e0ff;
+            transform: scale(0.98);
+        }
+        
+        /* Footer Navigation styles */
+        #footer-prev-btn:hover, #footer-next-btn:hover {
+            border-color: #713df5;
+            background-color: #f7f5ff;
+            box-shadow: 0px 1px 3px 0px rgba(113, 61, 245, 0.1);
+        }
+        
+        #footer-prev-btn:active, #footer-next-btn:active {
+            background-color: #e4e0ff;
+            transform: scale(0.98);
+        }
+        
         /* Font face declarations */
         @font-face {
             font-family: 'Reckless Neue TRIAL';
@@ -164,11 +188,48 @@
         <span>Back to Gmail</span>
     </a>
     
-    <!-- Style Toggle Tabs (iOS 7 style) -->
-    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; background-color: #ffffff; border-radius: 6px; border: 1px solid #c7c7cc; overflow: hidden; box-shadow: 0px 1px 3px rgba(0,0,0,0.1); padding: 4px;">
-        <button id="style1-tab" onclick="switchStyle(1)" style="padding: 6px 16px; border: none; background-color: #007aff; color: #ffffff; cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 500; width: 100%; border-radius: 4px;">1</button>
-        <button id="style2-tab" onclick="switchStyle(2)" style="padding: 6px 16px; border: none; background-color: #ffffff; color: #007aff; cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 500; width: 100%; border-radius: 4px;">2</button>
-        <button id="style3-tab" onclick="switchStyle(3)" style="padding: 6px 16px; border: none; background-color: #ffffff; color: #007aff; cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 500; width: 100%; border-radius: 4px;">3</button>
+    <!-- Footer Navigation -->
+    <div style="position: fixed; bottom: 131px; right: 20px; z-index: 1000; background-color: #ffffff; border-radius: 16px; border: 1px solid #dde2e9; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.03), 0px 8px 24px -4px rgba(0,0,0,0.05), 0px 8px 32px -8px rgba(0,0,0,0.05); padding: 16px 20px;">
+        <label style="display: block; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 600; color: #713df5; margin-bottom: 8px; letter-spacing: 0.3px;">Footer</label>
+        <div style="display: flex; align-items: center; gap: 12px; justify-content: center;">
+            <button id="footer-prev-btn" onclick="navigateFooter(-1)" style="padding: 8px 12px; border: 1px solid #dde2e9; border-radius: 8px; background-color: #ffffff; cursor: pointer; outline: none; transition: all 0.2s ease; min-width: 40px; display: flex; align-items: center; justify-content: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="display: block;">
+                    <g fill="#713df5" stroke-miterlimit="10">
+                        <polyline fill="none" stroke="#713df5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" points="10.5,0.5 5.5,8 10.5,15.5"></polyline>
+                    </g>
+                </svg>
+            </button>
+            <span id="footer-display" style="font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 500; color: #000000; min-width: 80px; text-align: center;">Style 1</span>
+            <button id="footer-next-btn" onclick="navigateFooter(1)" style="padding: 8px 12px; border: 1px solid #dde2e9; border-radius: 8px; background-color: #ffffff; cursor: pointer; outline: none; transition: all 0.2s ease; min-width: 40px; display: flex; align-items: center; justify-content: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="display: block;">
+                    <g fill="#713df5" stroke-miterlimit="10">
+                        <polyline fill="none" stroke="#713df5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" points="5.5,0.5 10.5,8 5.5,15.5"></polyline>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Instructions Section Navigation -->
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background-color: #ffffff; border-radius: 16px; border: 1px solid #dde2e9; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.03), 0px 8px 24px -4px rgba(0,0,0,0.05), 0px 8px 32px -8px rgba(0,0,0,0.05); padding: 16px 20px;">
+        <label style="display: block; font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 600; color: #713df5; margin-bottom: 8px; letter-spacing: 0.3px;">Instructions Section</label>
+        <div style="display: flex; align-items: center; gap: 12px; justify-content: center;">
+            <button id="style-prev-btn" onclick="navigateStyle(-1)" style="padding: 8px 12px; border: 1px solid #dde2e9; border-radius: 8px; background-color: #ffffff; cursor: pointer; outline: none; transition: all 0.2s ease; min-width: 40px; display: flex; align-items: center; justify-content: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="display: block;">
+                    <g fill="#713df5" stroke-miterlimit="10">
+                        <polyline fill="none" stroke="#713df5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" points="10.5,0.5 5.5,8 10.5,15.5"></polyline>
+                    </g>
+                </svg>
+            </button>
+            <span id="style-display" style="font-family: 'Goody Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 500; color: #000000; min-width: 80px; text-align: center;">Style 1</span>
+            <button id="style-next-btn" onclick="navigateStyle(1)" style="padding: 8px 12px; border: 1px solid #dde2e9; border-radius: 8px; background-color: #ffffff; cursor: pointer; outline: none; transition: all 0.2s ease; min-width: 40px; display: flex; align-items: center; justify-content: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="display: block;">
+                    <g fill="#713df5" stroke-miterlimit="10">
+                        <polyline fill="none" stroke="#713df5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" points="5.5,0.5 10.5,8 5.5,15.5"></polyline>
+                    </g>
+                </svg>
+            </button>
+        </div>
     </div>
     
     <!-- Wrapper table for centering -->
@@ -589,6 +650,58 @@
                 .catch(error => console.error('Error loading animation:', error));
         }
         
+        // Track current style (1, 2, or 3)
+        let currentStyle = 1;
+        
+        // Update style display text
+        function updateStyleDisplay(styleNumber) {
+            const styleDisplay = document.getElementById('style-display');
+            if (styleDisplay) {
+                styleDisplay.textContent = 'Style ' + styleNumber;
+            }
+            currentStyle = styleNumber;
+        }
+        
+        // Navigate between styles
+        function navigateStyle(direction) {
+            let newStyle = currentStyle + direction;
+            if (newStyle < 1) {
+                newStyle = 3;
+            } else if (newStyle > 3) {
+                newStyle = 1;
+            }
+            switchStyle(newStyle);
+        }
+        
+        // Track current footer style (1, 2, or 3)
+        let currentFooterStyle = 1;
+        
+        // Update footer display text
+        function updateFooterDisplay(styleNumber) {
+            const footerDisplay = document.getElementById('footer-display');
+            if (footerDisplay) {
+                footerDisplay.textContent = 'Style ' + styleNumber;
+            }
+            currentFooterStyle = styleNumber;
+        }
+        
+        // Navigate between footer styles
+        function navigateFooter(direction) {
+            let newStyle = currentFooterStyle + direction;
+            if (newStyle < 1) {
+                newStyle = 3;
+            } else if (newStyle > 3) {
+                newStyle = 1;
+            }
+            switchFooterStyle(newStyle);
+        }
+        
+        // Footer style switcher function (placeholder - will be implemented later)
+        function switchFooterStyle(styleNumber) {
+            // TODO: Implement footer style switching logic
+            updateFooterDisplay(styleNumber);
+        }
+        
         // Style switcher function
         function switchStyle(styleNumber) {
             const stepImages = document.querySelectorAll('.step-icon');
@@ -598,15 +711,9 @@
             const stepNumbers = document.querySelectorAll('.step-number');
             const stepTexts = document.querySelectorAll('.step-text');
             const sectionHeading = document.querySelector('.section-heading');
-            const style1Tab = document.getElementById('style1-tab');
-            const style2Tab = document.getElementById('style2-tab');
-            const style3Tab = document.getElementById('style3-tab');
             
-            // Reset all tabs
-            [style1Tab, style2Tab, style3Tab].forEach(tab => {
-                tab.style.backgroundColor = '#ffffff';
-                tab.style.color = '#007aff';
-            });
+            // Update display text
+            updateStyleDisplay(styleNumber);
             
             stepImages.forEach(img => {
                 const style1Src = img.getAttribute('data-style1');
@@ -623,14 +730,10 @@
                     img.src = style1Src;
                     img.style.width = style1Width + 'px';
                     img.style.height = style1Height + 'px';
-                    style1Tab.style.backgroundColor = '#007aff';
-                    style1Tab.style.color = '#ffffff';
                 } else if (styleNumber === 2) {
                     img.src = style2Src;
                     img.style.width = style2Width + 'px';
                     img.style.height = style2Height + 'px';
-                    style2Tab.style.backgroundColor = '#007aff';
-                    style2Tab.style.color = '#ffffff';
                 } else if (styleNumber === 3) {
                     if (style3Src) {
                         img.src = style3Src;
@@ -642,8 +745,6 @@
                         img.style.width = style1Width + 'px';
                         img.style.height = style1Height + 'px';
                     }
-                    style3Tab.style.backgroundColor = '#007aff';
-                    style3Tab.style.color = '#ffffff';
                 }
             });
             
@@ -723,6 +824,11 @@
                 firstTimeSpan.style.color = '#000000';
             }
             
+            // Initialize style display
+            updateStyleDisplay(1);
+            
+            // Initialize footer display
+            updateFooterDisplay(1);
         });
     </script>
 </body>
