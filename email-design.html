@@ -821,8 +821,8 @@
                                 </table>
                             </div>
                             
-                            <!-- Footer Style 4 -->
-                            <div class="footer-style-4" style="display: none; width: 100%; box-sizing: border-box; padding: 60px 80px 0 80px;">
+                            <!-- Footer Style 3 -->
+                            <div class="footer-style-3" style="display: none; width: 100%; box-sizing: border-box; padding: 60px 80px 0 80px;">
                                 <!-- Header Section with Iridescent BG -->
                                 <div style="border: 1px solid #dde2e9; border-radius: 32px; padding: 40px 80px; position: relative; overflow: hidden; margin-bottom: 40px; background-color: #ffffff;">
                                     <!-- Iridescent Background -->
@@ -943,13 +943,27 @@
             currentFooterStyle = styleNumber;
         }
         
-        // Navigate between footer styles
+        // Navigate between footer styles (cycle: 1 -> 2 -> 3 -> 1)
         function navigateFooter(direction) {
-            let newStyle = currentFooterStyle + direction;
-            if (newStyle < 1) {
-                newStyle = 4;
-            } else if (newStyle > 4) {
-                newStyle = 1;
+            let newStyle = currentFooterStyle;
+            if (direction === 1) {
+                // Forward: 1 -> 2 -> 3 -> 1
+                if (currentFooterStyle === 1) {
+                    newStyle = 2;
+                } else if (currentFooterStyle === 2) {
+                    newStyle = 3;
+                } else if (currentFooterStyle === 3) {
+                    newStyle = 1;
+                }
+            } else {
+                // Backward: 1 -> 3 -> 2 -> 1
+                if (currentFooterStyle === 1) {
+                    newStyle = 3;
+                } else if (currentFooterStyle === 2) {
+                    newStyle = 1;
+                } else if (currentFooterStyle === 3) {
+                    newStyle = 2;
+                }
             }
             switchFooterStyle(newStyle);
         }
@@ -958,7 +972,7 @@
         function switchFooterStyle(styleNumber) {
             const footerStyle1 = document.querySelector('.footer-style-1');
             const footerStyle2 = document.querySelector('.footer-style-2');
-            const footerStyle4 = document.querySelector('.footer-style-4');
+            const footerStyle3 = document.querySelector('.footer-style-3');
             
             // Hide all styles first
             if (footerStyle1) {
@@ -967,8 +981,8 @@
             if (footerStyle2) {
                 footerStyle2.style.display = 'none';
             }
-            if (footerStyle4) {
-                footerStyle4.style.display = 'none';
+            if (footerStyle3) {
+                footerStyle3.style.display = 'none';
             }
             
             // Show the selected style
@@ -976,14 +990,13 @@
                 if (footerStyle1) {
                     footerStyle1.style.display = 'flex';
                 }
-            } else if (styleNumber === 2 || styleNumber === 3) {
-                // Style 2 and 3 both show Style 2 layout
+            } else if (styleNumber === 2) {
                 if (footerStyle2) {
                     footerStyle2.style.display = 'block';
                 }
-            } else if (styleNumber === 4) {
-                if (footerStyle4) {
-                    footerStyle4.style.display = 'block';
+            } else if (styleNumber === 3) {
+                if (footerStyle3) {
+                    footerStyle3.style.display = 'block';
                 }
             }
             
