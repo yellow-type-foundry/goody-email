@@ -494,7 +494,7 @@
                                     
                                     <!-- Style 4 Layout (hidden by default) -->
                                     <tr class="style4-steps" style="display: none;">
-                                        <td align="center" style="padding: 60px 80px 0px 80px; width: 100%;">
+                                        <td align="center" style="padding: 60px 80px 12px 80px; width: 100%;">
                                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; margin: 0 auto;">
                                                 <!-- Step 1 Card -->
                                                 <tr>
@@ -1067,6 +1067,7 @@
             const ctaButtonRow = document.querySelector('.cta-button-row');
             const brushImage = document.querySelector('.brush-image');
             const firstTimeSpan = document.querySelector('.first-time-span');
+            const sectionHeadingTd = sectionHeading ? sectionHeading.closest('td') : null;
             
             if (styleNumber === 3) {
                 // Change heading to have purple "First time"
@@ -1092,6 +1093,11 @@
                     div.style.display = 'table-row';
                 });
                 
+                // Reset section heading padding-bottom for style 3
+                if (sectionHeadingTd) {
+                    sectionHeadingTd.style.paddingBottom = '60px';
+                }
+                
                 // Hide style 4
                 style4Steps.forEach(row => {
                     row.style.display = 'none';
@@ -1110,6 +1116,11 @@
                 // Show brush image
                 if (brushImage) {
                     brushImage.style.display = 'block';
+                }
+                
+                // Update section heading padding-bottom for style 4
+                if (sectionHeadingTd) {
+                    sectionHeadingTd.style.paddingBottom = '12px';
                 }
                 
                 // Hide regular step rows
@@ -1143,6 +1154,11 @@
                 // Hide brush image
                 if (brushImage) {
                     brushImage.style.display = 'none';
+                }
+                
+                // Reset section heading padding-bottom for styles 1 and 2
+                if (sectionHeadingTd) {
+                    sectionHeadingTd.style.paddingBottom = '60px';
                 }
                 
                 // Show regular step rows
