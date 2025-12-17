@@ -749,26 +749,30 @@
             switchStyle(newStyle);
         }
         
-        // Navigate between footer styles (cycle: 1 -> 2 -> 3 -> 1)
+        // Navigate between footer styles (cycle: 1 -> 2 -> 3 -> 4 -> 1)
         function navigateFooter(direction) {
             let newStyle = currentFooterStyle;
             if (direction === 1) {
-                // Forward: 1 -> 2 -> 3 -> 1
+                // Forward: 1 -> 2 -> 3 -> 4 -> 1
                 if (currentFooterStyle === 1) {
                     newStyle = 2;
                 } else if (currentFooterStyle === 2) {
                     newStyle = 3;
                 } else if (currentFooterStyle === 3) {
+                    newStyle = 4;
+                } else if (currentFooterStyle === 4) {
                     newStyle = 1;
                 }
             } else {
-                // Backward: 1 -> 3 -> 2 -> 1
+                // Backward: 1 -> 4 -> 3 -> 2 -> 1
                 if (currentFooterStyle === 1) {
-                    newStyle = 3;
+                    newStyle = 4;
                 } else if (currentFooterStyle === 2) {
                     newStyle = 1;
                 } else if (currentFooterStyle === 3) {
                     newStyle = 2;
+                } else if (currentFooterStyle === 4) {
+                    newStyle = 3;
                 }
             }
             switchFooterStyle(newStyle);
@@ -779,6 +783,7 @@
             const footerStyle1 = document.querySelector('.footer-style-1');
             const footerStyle2 = document.querySelector('.footer-style-2');
             const footerStyle3 = document.querySelector('.footer-style-3');
+            const footerStyle4 = document.querySelector('.footer-style-4');
             
             // Hide all styles first
             if (footerStyle1) {
@@ -789,6 +794,9 @@
             }
             if (footerStyle3) {
                 footerStyle3.style.display = 'none';
+            }
+            if (footerStyle4) {
+                footerStyle4.style.display = 'none';
             }
             
             // Show the selected style
@@ -803,6 +811,10 @@
             } else if (styleNumber === 3) {
                 if (footerStyle3) {
                     footerStyle3.style.display = 'block';
+                }
+            } else if (styleNumber === 4) {
+                if (footerStyle4) {
+                    footerStyle4.style.display = 'block';
                 }
             }
             
