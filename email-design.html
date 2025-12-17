@@ -647,7 +647,7 @@
                     <tr>
                         <td align="center" class="footer-container" style="padding: 0; background-color: #ffffff; width: 100%; box-sizing: border-box;">
                             <!-- Footer Style 1 -->
-                            <div class="footer-style-1" style="display: flex; flex-direction: column; width: 100%; gap: 28px; padding: 60px 60px 0 60px; box-sizing: border-box;">
+                            <div class="footer-style-1" style="display: none; flex-direction: column; width: 100%; gap: 28px; padding: 60px 60px 0 60px; box-sizing: border-box;">
                                 <!-- Purple Box with Logo and App Store Rating -->
                                 <div>
                                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="footer-purple-box" style="width: 100%; background-color: rgba(247, 245, 255, 1); border-radius: 16px; padding: 20px; height: fit-content; border-image: none; border-width: 0px; border-style: none; border-color: rgba(0, 0, 0, 0);">
@@ -907,14 +907,14 @@
                             </div>
                             
                             <!-- Footer Style 4 -->
-                            <div class="footer-style-4" style="display: none; width: 100%; box-sizing: border-box; padding: 0;">
+                            <div class="footer-style-4" style="display: block; width: 100%; box-sizing: border-box; padding-top: 60px;">
                                 <!-- Header Section with Iridescent BG -->
                                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; width: 100%; position: relative;">
                                     <tr>
                                         <td align="center" class="footer-style-4-header" style="padding: 40px 80px; position: relative; background-color: #ffffff;">
                                             <!-- Iridescent Background -->
                                             <div style="position: absolute; bottom: 0; left: 0; right: 0; width: 100%; height: 305px; overflow: hidden; z-index: 0;">
-                                                <img src="/images/Iridescent%20BG.png" alt="Iridescent Background" width="800" height="340" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; max-width: 800px; margin: 0 auto;">
+                                                <img src="/images/footer%204/Iridescent%20BG%202.png" alt="Iridescent Background" width="800" height="340" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; max-width: 800px; margin: 0 auto;">
                                             </div>
                                             
                                             <!-- Content Container -->
@@ -952,7 +952,7 @@
                                 <!-- Trust Indicators Section - Three Columns -->
                                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; width: 100%;">
                                     <tr>
-                                        <td align="center" class="footer-style-4-columns" style="padding: 40px 100px;">
+                                        <td align="center" class="footer-style-4-columns" style="padding: 20px 100px 40px 100px;">
                                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                                 <tr>
                                                     <!-- Column 1: #1 Fastest-growing -->
@@ -1038,7 +1038,7 @@
                                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; width: 100%;">
                                     <tr>
                                         <td align="center" class="footer-style-4-purple-box" style="padding: 0 100px 40px 100px;">
-                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f7f5ff; border-radius: 12px; padding: 16px 20px; position: relative;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f7f5ff; border-radius: 12px; padding: 16px 20px; position: relative; width: 100%;">
                                                 <tr>
                                                     <!-- Item 1: Over 2M gifts delivered -->
                                                     <td align="center" valign="middle" width="33.33%" style="padding: 0 10px;">
@@ -1064,7 +1064,7 @@
                                                         </table>
                                                     </td>
                                                     <!-- Item 2: 500+ trendy brands -->
-                                                    <td align="center" valign="middle" width="33.33%" style="padding: 0 10px;">
+                                                    <td align="center" valign="middle" width="33.33%" style="padding: 0 10px; width: fit-content;">
                                                         <table role="presentation" cellspacing="0" cellpadding="0" border="0">
                                                             <tr>
                                                                 <td align="center" valign="middle" style="padding-right: 6px;">
@@ -1197,7 +1197,7 @@
         }
         
         // Track current footer style (1, 2, 3, or 4)
-        let currentFooterStyle = 1;
+        let currentFooterStyle = 4;
         
         // Update footer display text
         function updateFooterDisplay(styleNumber) {
@@ -1477,7 +1477,7 @@
             updateStyleDisplay(1);
             
             // Initialize footer display
-            updateFooterDisplay(1);
+            updateFooterDisplay(4);
         });
     </script>
 </body>

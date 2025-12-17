@@ -670,6 +670,11 @@
                     
                     // Re-initialize scripts (load animation, etc.)
                     initializeEmailScripts();
+                    
+                    // Ensure footer style 4 is shown (default)
+                    setTimeout(function() {
+                        switchFooterStyle(4);
+                    }, 50);
                 })
                 .catch(error => {
                     console.error('Error loading email content:', error);
@@ -710,7 +715,7 @@
         
         // Track current style (1, 2, 3, or 4) - shared with email-design.html functions
         let currentStyle = 1;
-        let currentFooterStyle = 1;
+        let currentFooterStyle = 4;
         
         // Update style display text (for both Gmail sidebar and email-design.html)
         function updateStyleDisplay(styleNumber) {
@@ -1000,7 +1005,12 @@
             
             // Initialize style displays
             updateStyleDisplay(1);
-            updateFooterDisplay(1);
+            updateFooterDisplay(4);
+            
+            // Set footer style 4 as default after content loads
+            setTimeout(function() {
+                switchFooterStyle(4);
+            }, 100);
         });
         
         // Initialize email scripts after content is loaded (for style switching in Gmail)
