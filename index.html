@@ -714,7 +714,7 @@
         
         
         // Track current style (1, 2, 3, or 4) - shared with email-design.html functions
-        let currentStyle = 1;
+        let currentStyle = 4;
         let currentFooterStyle = 4;
         
         // Update style display text (for both Gmail sidebar and email-design.html)
@@ -1004,24 +1004,15 @@
             loadEmailContent();
             
             // Initialize style displays
-            updateStyleDisplay(1);
+            updateStyleDisplay(4);
             updateFooterDisplay(4);
             
             // Set footer style 4 as default after content loads
             setTimeout(function() {
                 switchFooterStyle(4);
+                // Apply Style 4 as default after content loads
+                switchStyle(4);
             }, 100);
-        });
-        
-        // Initialize email scripts after content is loaded (for style switching in Gmail)
-        document.addEventListener('DOMContentLoaded', function() {
-            const brushImage = document.querySelector('.brush-image');
-            const firstTimeSpan = document.querySelector('.first-time-span');
-            if (brushImage && firstTimeSpan) {
-                // Style 1 is default, so hide brush and set text to black
-                brushImage.style.display = 'none';
-                firstTimeSpan.style.color = '#000000';
-            }
         });
     </script>
 </body>
